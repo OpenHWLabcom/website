@@ -9,3 +9,4 @@ Thumbs.db
 
 # local preview
 .preview.pid
+.wrangler/
