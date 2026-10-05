@@ -44,9 +44,10 @@ code{background:#0a1322;border:1px solid var(--line);border-radius:6px;padding:2
 .hero{text-align:center;padding:72px 0 46px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:
   radial-gradient(600px 260px at 50% -40px,rgba(74,157,240,.20),transparent 70%);pointer-events:none}
-.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 16px;letter-spacing:-.5px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);margin:0 0 10px;letter-spacing:-.5px}
 .hero .hl{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .sub{color:var(--mut);font-size:clamp(15px,2.2vw,18px);margin:0 auto 28px;max-width:660px}
+.hero .tag{color:#cfdcf0;font-size:clamp(17px,2.6vw,22px);font-weight:600;letter-spacing:.04em;margin:0 0 20px}
+.hero .sub{color:var(--mut);font-size:clamp(15px,2.2vw,17px);margin:0 auto 28px;max-width:640px}
 .slogan{display:inline-block;margin:2px 0 20px;font-size:clamp(16px,2.7vw,23px);font-weight:800;letter-spacing:.3em;text-indent:.3em;
   color:var(--acc2);text-shadow:0 0 26px rgba(127,208,255,.35)}
 .slogan:before{content:"「";color:var(--mut2);margin-right:.06em}
