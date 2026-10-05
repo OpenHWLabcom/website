@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Downloads · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab downloads: TV-box repurposing kits (game console / mini PC / surveillance / print server) with SHA-256 checksums.">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/en/downloads.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/downloads.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/downloads.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/downloads.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">The courage to explore</span>
+    <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="downloads.html" class="on">Downloads</a>
+      <a href="docs.html">Docs</a>
+      <a href="about.html">About</a>
+      <a class="gh" href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="lang" href="../downloads.html"><b>中文</b></a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap" style="padding-top:44px">
+  <h2>Downloads</h2>
+  <p class="lead">Each kit bundles “install files + illustrated guide + developer docs (with source)”. Unzip and follow <code>Install-Guide.pdf</code>.</p>
+</section>
+
+<main>
+<section class="wrap">
+  <div class="cards two">
+
+    <article class="card">
+      <div class="ic">🎮</div>
+      <h3>TV Box → Game Console</h3>
+      <p>Home console: 8 mini-games + study/exam/tutorial games, 1–9 players, phone-as-controller.</p>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-game-console.zip" download>Download .zip (295 KB)</a>
+        <a class="btn ghost" href="docs.html">Read the guide</a>
+      </div>
+      <details><summary>SHA-256 checksum</summary><code>4205d90b2756ecabbb81c3928f353d5bc83d28e611829652eb450b8ef1263083</code></details>
+    </article>
+
+    <article class="card">
+      <div class="ic">🖥️</div>
+      <h3>TV Box → Mini PC</h3>
+      <p>Lightweight desktop: browser + Chinese IME + file transfer + USB drive; storage as memory.</p>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-desktop-pc.zip" download>Download .zip (529 KB)</a>
+        <a class="btn ghost" href="docs.html">Read the guide</a>
+      </div>
+      <details><summary>SHA-256 checksum</summary><code>be2b4e80fb8c470207dd572ba51fec17d17a5358339c0c97c09cec02ca570adf</code></details>
+    </article>
+
+    <article class="card">
+      <div class="ic">📹</div>
+      <h3>TV Box → Surveillance NVR</h3>
+      <p>USB camera → live + loop recording + remote view + motion detection + AI + push alerts.</p>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-surveillance.zip" download>Download .zip (11 MB)</a>
+        <a class="btn ghost" href="docs.html">Read the guide</a>
+      </div>
+      <details><summary>SHA-256 checksum</summary><code>1ec2499cdc8812f8ac0cc46d00a55fb28063c05bc47d42a32ac9c92a5e5c32b8</code></details>
+    </article>
+
+    <article class="card">
+      <div class="ic">🖨️</div>
+      <h3>TV Box → Print Server</h3>
+      <p>Old USB printer → network printer: web print, AirPrint, IPP, QR upload.</p>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-print-server.zip" download>Download .zip (349 KB)</a>
+        <a class="btn ghost" href="docs.html">Read the guide</a>
+      </div>
+      <details><summary>SHA-256 checksum</summary><code>b8f34f0a4c3bdc3ea08ee2f76e0f3bc9729d6fba4f3cce1f66f112cacb5ecda7</code></details>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>How to verify</h2></div>
+  <div class="callout">
+    Windows (PowerShell): <code>Get-FileHash .\openhwlab-*.zip -Algorithm SHA256</code><br>
+    macOS / Linux: <code>sha256sum openhwlab-*.zip</code><br>
+    If the result matches the value above, the package is intact and unmodified.
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>Changelog</h2></div>
+  <table>
+    <thead><tr><th>Date</th><th>Kit</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>2026-10-05</td><td>Print Server</td><td>First public release: print portal + admin + driver wizard + QR sheets</td></tr>
+      <tr><td>2026-10-05</td><td>Surveillance NVR</td><td>Update: multi-camera 4-up / scene detection / push alerts / SD·USB storage</td></tr>
+      <tr><td>2026-10-03</td><td>Game Console / Mini PC</td><td>First public release</td></tr>
+    </tbody>
+  </table>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="../assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · Open Hardware Lab<br>Open · Open-Source · Co-create · Share</div>
+      </div>
+      <div><b style="color:#fff">Site</b><br><a href="projects.html">Projects</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">Open source</b><br><a href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub</a> · MIT License</div>
+    </div>
+    <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>
+  </div>
+</footer>
+</body>
+</html>

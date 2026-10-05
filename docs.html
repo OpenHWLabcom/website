@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>教程与文档 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 教程：机顶盒改造通用流程、开 ADB、瘦身、扩容、监控/打印等各方案图文教程与常见问题。">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="assets/logo.svg">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/docs.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/docs.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/docs.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">激发探索的勇气</span>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="projects.html">项目</a>
+      <a href="downloads.html">下载</a>
+      <a href="docs.html" class="on">教程</a>
+      <a href="about.html">关于</a>
+      <a class="gh" href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="lang" href="en/docs.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap" style="padding-top:44px">
+  <h2>教程与文档</h2>
+  <p class="lead">每个方案的安装包里都带一份图文 <code>安装教程.pdf</code>。下面先给出「通用流程」，再列出各方案的教程与开发者文档。</p>
+</section>
+
+<main>
+<section class="wrap">
+  <div class="sec-head"><h2>通用流程<span class="n">任何方案都先做这几步</span></h2></div>
+  <ol class="steps">
+    <li><b>确认机型</b>：你的安卓机顶盒（Android 4.4+，armv7/arm64），且<b>已 root</b>。</li>
+    <li><b>开启 ADB</b>：在盒子「开发者选项」里打开 USB/网络调试；电脑装好 <code>adb</code>。</li>
+    <li><b>连通盒子</b>：<code>adb connect &lt;盒子IP&gt;:5555</code>（或用 USB 线）。</li>
+    <li><b>下载并解压</b>对应方案的 <code>.zip</code>。</li>
+    <li><b>运行一键安装</b>：进入 <code>安装文件/</code>，执行 <code>./一键安装.sh &lt;盒子IP&gt;</code>；或照 <code>安装教程.pdf</code> 手动装。</li>
+    <li><b>重启验证</b>：按教程把方案设为「开机启动 / 桌面」，重启后自动进入。</li>
+  </ol>
+  <div class="callout">
+    ⚠️ <b>安全提示</b>：本项目<b>不刷机、不改系统分区</b>。所有改动都在应用层与 <code>/data</code> 内，卸载 apk、重新启用被禁用的系统应用即可还原。
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>各方案教程</h2></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">🎮</div><h3>游戏机</h3>
+      <p>安装 · 设为开机桌面 · 手机扫码当手柄 · 在线更新。</p>
+      <div class="dl"><a class="btn" href="downloads.html">下载安装包（内含教程）</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">🖥️</div><h3>电脑主机</h3>
+      <p>开 ADB · 瘦身 · 内存扩容 · 搭 Linux 子系统 · 装桌面 · 互传/U 盘 · 输入法。</p>
+      <div class="dl"><a class="btn" href="downloads.html">下载安装包（内含教程）</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">📹</div><h3>监控录像主机</h3>
+      <p>USB 摄像头接入 · 循环录像 · 远程查看 · 移动侦测 · 物体识别 · 告警推送。</p>
+      <div class="dl"><a class="btn" href="downloads.html">下载安装包（内含教程）</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">🖨️</div><h3>打印机服务器</h3>
+      <p>装 CUPS · 识别打印机型号 · 联网装驱动 · 手机扫码传件打印 · 二维码贴纸。</p>
+      <div class="dl"><a class="btn" href="downloads.html">下载安装包（内含教程）</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>开发者文档</h2></div>
+  <div class="grid-list">
+    <li><b>系统改造手册</b><br><span class="note" style="margin:0">从零梳理盒子的分区、root、ADB、子系统与自启链路。</span></li>
+    <li><b>从源码构建</b><br><span class="note" style="margin:0">各 App 与服务的编译、打包步骤。</span></li>
+    <li><b>关键坑与经验</b><br><span class="note" style="margin:0">踩过的坑与解决办法（USB 口、PATH、认证、缓存…）。</span></li>
+    <li><b>常见问题</b><br><span class="note" style="margin:0">FAQ：不出画面、装不上、DNS 假警报等。</span></li>
+  </div>
+  <p class="note">这些文档都在对应安装包的 <code>开发者资料/</code> 目录内，后续也会逐步搬到站上在线阅读。</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · 开放硬件实验室<br>开放、开源、共创、共享</div>
+      </div>
+      <div><b style="color:#fff">导航</b><br><a href="projects.html">项目</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="about.html">关于</a></div>
+      <div><b style="color:#fff">开源</b><br><a href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub</a> · MIT License</div>
+    </div>
+    <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>
+  </div>
+</footer>
+</body>
+</html>

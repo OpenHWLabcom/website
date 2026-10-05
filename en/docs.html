@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guides &amp; Docs · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab guides: general workflow, enabling ADB, slimming, swap expansion, and per-kit illustrated guides plus FAQ.">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/en/docs.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/docs.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/docs.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/docs.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">The courage to explore</span>
+    <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="docs.html" class="on">Docs</a>
+      <a href="about.html">About</a>
+      <a class="gh" href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="lang" href="../docs.html"><b>中文</b></a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap" style="padding-top:44px">
+  <h2>Guides &amp; Docs</h2>
+  <p class="lead">Every kit ships an illustrated <code>Install-Guide.pdf</code>. Below is the general workflow, then per-kit guides and developer docs.</p>
+</section>
+
+<main>
+<section class="wrap">
+  <div class="sec-head"><h2>General workflow<span class="n">Do this first, for any kit</span></h2></div>
+  <ol class="steps">
+    <li><b>Check your model</b>: an Android TV box (Android 4.4+, armv7/arm64) that is <b>rooted</b>.</li>
+    <li><b>Enable ADB</b>: turn on USB/network debugging in Developer Options; install <code>adb</code> on your PC.</li>
+    <li><b>Connect</b>: <code>adb connect &lt;box-ip&gt;:5555</code> (or use a USB cable).</li>
+    <li><b>Download &amp; unzip</b> the kit you want.</li>
+    <li><b>Run one-click install</b>: in <code>install/</code>, run <code>./one-click-install.sh &lt;box-ip&gt;</code>; or follow <code>Install-Guide.pdf</code> manually.</li>
+    <li><b>Reboot &amp; verify</b>: set the app as boot launcher per the guide; it should start automatically.</li>
+  </ol>
+  <div class="callout">
+    ⚠️ <b>Safety</b>: we do <b>not</b> flash firmware or touch system partitions. All changes live at the app layer and under <code>/data</code> — uninstall the apk / re-enable disabled system apps to revert.
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>Per-kit guides</h2></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">🎮</div><h3>Game Console</h3>
+      <p>Install · set as launcher · phone-as-controller · OTA update.</p>
+      <div class="dl"><a class="btn" href="downloads.html">Download kit (guide included)</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">🖥️</div><h3>Mini PC</h3>
+      <p>Enable ADB · slim down · expand swap · set up Linux subsystem · install desktop · file transfer/USB · IME.</p>
+      <div class="dl"><a class="btn" href="downloads.html">Download kit (guide included)</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">📹</div><h3>Surveillance NVR</h3>
+      <p>USB camera setup · loop recording · remote view · motion detection · object detection · push alerts.</p>
+      <div class="dl"><a class="btn" href="downloads.html">Download kit (guide included)</a></div>
+    </article>
+    <article class="card">
+      <div class="ic">🖨️</div><h3>Print Server</h3>
+      <p>Install CUPS · detect printer model · online driver install · phone QR print · QR sheets.</p>
+      <div class="dl"><a class="btn" href="downloads.html">Download kit (guide included)</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>Developer docs</h2></div>
+  <div class="grid-list">
+    <li><b>System Handbook</b><br><span class="note" style="margin:0">Partitions, root, ADB, the Linux subsystem and autostart from scratch.</span></li>
+    <li><b>Building from Source</b><br><span class="note" style="margin:0">Compile and package each app and service.</span></li>
+    <li><b>Pitfalls &amp; Lessons</b><br><span class="note" style="margin:0">Every trap we hit and how we fixed it (USB ports, PATH, auth, cache…).</span></li>
+    <li><b>FAQ</b><br><span class="note" style="margin:0">No picture, install fails, DNS false alarms, and more.</span></li>
+  </div>
+  <p class="note">These live in each kit’s <code>developer-docs/</code> folder, and will be published for online reading here over time.</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="../assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · Open Hardware Lab<br>Open · Open-Source · Co-create · Share</div>
+      </div>
+      <div><b style="color:#fff">Site</b><br><a href="projects.html">Projects</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">Open source</b><br><a href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub</a> · MIT License</div>
+    </div>
+    <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>
+  </div>
+</footer>
+</body>
+</html>

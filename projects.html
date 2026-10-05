@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全部项目 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 全部开源项目：机顶盒改造系列、ESP32/STM32 单片机、视觉 AI。">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="assets/logo.svg">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/projects.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/projects.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/projects.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">激发探索的勇气</span>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="projects.html" class="on">项目</a>
+      <a href="downloads.html">下载</a>
+      <a href="docs.html">教程</a>
+      <a href="about.html">关于</a>
+      <a class="gh" href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="lang" href="en/projects.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap" style="padding-top:44px">
+  <h2>全部项目</h2>
+  <p class="lead">这里汇集 OpenHW Lab 的所有开源项目。已发布的方案可直接下载；标注「源码 / 整理中」的会陆续补齐安装包与教程。</p>
+</section>
+
+<main>
+<section class="wrap" id="stb">
+  <div class="sec-head"><h2>机顶盒改造系列<span class="n">让闲置安卓机顶盒重获新生</span></h2></div>
+  <div class="cards">
+
+    <article class="card">
+      <span class="badge">可用</span><div class="ic">🎮</div>
+      <h3>机顶盒改游戏机</h3>
+      <p>开机即玩的家庭游戏主机：8 款原生小游戏（打砖块/俄罗斯方块/2048/贪吃蛇/打地鼠/坦克大战/乒乓球/飞机大战）+ 学科 / 考证 / 教学游戏。1–9 人同屏，手机扫码即可当手柄。</p>
+      <ul class="tags"><li>离线</li><li>多人同屏</li><li>手机手柄</li><li>在线更新</li></ul>
+      <div class="dl"><a class="btn" href="dl/openhwlab-game-console.zip" download>下载 (.zip · 295K)</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge">可用</span><div class="ic">🖥️</div>
+      <h3>机顶盒改电脑主机</h3>
+      <p>把盒子变成轻量小主机：原生桌面 + 浏览器 + 中文输入法 + 局域网互传 + 接 U 盘；把存储当内存扩容，开机自愈，日常办公/冲浪够用。</p>
+      <ul class="tags"><li>桌面环境</li><li>浏览器</li><li>互传</li><li>扩容</li></ul>
+      <div class="dl"><a class="btn" href="dl/openhwlab-desktop-pc.zip" download>下载 (.zip · 529K)</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge">可用</span><div class="ic">📹</div>
+      <h3>机顶盒改监控录像主机</h3>
+      <p>插一个 USB 摄像头即成监控：MJPEG 直播 + 30 秒循环录像 + 手机远程看 + 移动侦测 + YOLO 物体识别 + 告警推送；多路摄像头 4 宫格，录像可落内部/SD/U 盘。</p>
+      <ul class="tags"><li>循环录像</li><li>远程查看</li><li>AI 识别</li><li>告警推送</li></ul>
+      <div class="dl"><a class="btn" href="dl/openhwlab-surveillance.zip" download>下载 (.zip · 11M)</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge">可用</span><div class="ic">🖨️</div>
+      <h3>机顶盒改打印机服务器</h3>
+      <p>把老旧 USB 打印机变成网络打印机：手机/电脑打开网页即可拖拽打印，支持 AirPrint 与 IPP 直连，自动识别打印机型号并联网装驱动，还能打印二维码贴纸。</p>
+      <ul class="tags"><li>网络打印</li><li>AirPrint</li><li>扫码传件</li><li>驱动向导</li></ul>
+      <div class="dl"><a class="btn" href="dl/openhwlab-print-server.zip" download>下载 (.zip · 349K)</a></div>
+    </article>
+
+  </div>
+  <p class="note">通用前提：盒子<b>已 root</b>、能开 <b>ADB</b>；<b>不刷机</b>，可随时卸载还原。详见 <a href="docs.html">教程</a>。</p>
+</section>
+
+<section class="wrap" id="hw">
+  <div class="sec-head"><h2>硬件 · 单片机<span class="n">ESP32 / STM32</span></h2></div>
+  <div class="cards">
+
+    <article class="card">
+      <span class="badge soon">源码</span><div class="ic">🕹️</div>
+      <h3>ESP32-P4 实体摇杆手柄</h3>
+      <p>用 ESP32-P4 + 模拟摇杆 + 按键做成实体手柄，经主机中继接入机顶盒游戏厅。含 ADC 读数、去抖、串口协议与演示页。</p>
+      <ul class="tags"><li>ESP32-P4</li><li>摇杆</li><li>中继</li></ul>
+      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge soon">源码</span><div class="ic">🔦</div>
+      <h3>ESP32-P4 激光探测器</h3>
+      <p>激光/光电传感器 + ESP32-P4，检测光束遮挡并实时网页显示，可做防盗报警或计数。</p>
+      <ul class="tags"><li>ESP32-P4</li><li>传感</li><li>网页</li></ul>
+      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge soon">源码</span><div class="ic">👆</div>
+      <h3>STM32 敲击 / 倾斜传感器</h3>
+      <p>STM32F103 蓝药丸入门：敲击（KY-031）与倾斜开关采集，串口上报 + 网页可视化。</p>
+      <ul class="tags"><li>STM32</li><li>入门</li><li>串口</li></ul>
+      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
+    </article>
+
+    <article class="card">
+      <span class="badge soon">源码</span><div class="ic">🎛️</div>
+      <h3>ESP32 控制 / 传感合集</h3>
+      <p>一串 ESP32 小实验：GPIO/ADC 读写、串口桥、传感器采集与网页控制台。</p>
+      <ul class="tags"><li>ESP32</li><li>合集</li></ul>
+      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap" id="ai">
+  <div class="sec-head"><h2>视觉 · AI<span class="n">在路上</span></h2></div>
+  <div class="cards two">
+    <article class="card">
+      <span class="badge soon">整理中</span><div class="ic">🏃</div>
+      <h3>跑步姿态分析</h3>
+      <p>基于摄像头/姿态估计的跑步动作分析，输出关键点与姿态指标。</p>
+      <ul class="tags"><li>姿态估计</li><li>视觉</li></ul>
+    </article>
+    <article class="card">
+      <span class="badge soon">整理中</span><div class="ic">🏓</div>
+      <h3>回弹飞影球 · 互动装置</h3>
+      <p>轻量互动小游戏/装置原型，摄像头识别 + 回弹玩法。</p>
+      <ul class="tags"><li>互动</li><li>原型</li></ul>
+    </article>
+  </div>
+  <p class="note">以上为实验室正在整理的项目，欢迎关注更新。</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · 开放硬件实验室<br>开放、开源、共创、共享</div>
+      </div>
+      <div><b style="color:#fff">导航</b><br><a href="projects.html">项目</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="about.html">关于</a></div>
+      <div><b style="color:#fff">开源</b><br><a href="https://github.com/openhwlab" target="_blank" rel="noopener">GitHub</a> · MIT License</div>
+    </div>
+    <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>
+  </div>
+</footer>
+</body>
+</html>
