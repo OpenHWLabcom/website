@@ -38,99 +38,100 @@
 <main>
 <section class="wrap" id="stb">
   <div class="sec-head"><h2>机顶盒改造系列<span class="n">让闲置安卓机顶盒重获新生</span></h2></div>
+    <div class="subhead"><h3>型号版 · 按机型实测</h3><span class="more">专为特定盒子实测，含该机型专属处理（ADB 授权 / 开机自启 / 指针补丁 等）</span></div>
+  <div class="cards four">
+    <article class="card">
+    <span class="badge">可用</span><div class="ic">🖨️</div>
+    <h3>魔百和 CM201-1 改打印机服务器</h3>
+    <img src="dl/preview-cm201-1.jpg" alt="print server panel" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
+    <p>把吃灰的<b>魔百和 CM201-1</b>盒子变成网络打印机：手机上网页/扫码打印，支持 IPP 直连。<b>驱动自适应多品牌</b>——插上自动识别型号、从内置驱动库匹配（HP / 兄弟 / 联想 / 爱普生 / 佳能 等），认不出的可传 .ppd；HP LaserJet 1018/1020/1022 更是插上即自动灌固件出纸。</p>
+    <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-cm201-1-print-server.zip" download>下载 (.zip · 1224K)</a></div>
+    </article>
+
+    <article class="card">
+    <span class="badge">可用</span><div class="ic">🖨️</div>
+    <h3>魔百和 CM201-2 改打印机服务器</h3>
+    <img src="dl/preview-cm201-2.jpg" alt="print server panel" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
+    <p>把吃灰的<b>魔百和 CM201-2</b>（海思 Hi3798MV300 / Android 4.4.2）变成网络打印机：网页/扫码打印、IPP 直连。<b>驱动自适应多品牌</b>（HP/兄弟/联想/爱普生/佳能 等），HP LaserJet 1018/1020/1022/1022n 插上即自动灌固件出纸；联想 M7206W 等主机型走 brlaser（本机实测）。开机自动进打印桌面。</p>
+    <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
+    <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/cm201-2-print-server/releases/download/v2.0/openhwlab-cm201-2-print-server-full.zip">⬇ 下载完整离线包 (67MB · 含系统+依赖)</a><a class="btn ghost" href="dl/openhwlab-cm201-2-print-server.zip" download>精简包 (.zip · 1233K)</a></div>
+    </article>
+
+    <article class="card">
+    <span class="badge">可用</span><div class="ic">⬇️</div>
+    <h3>魔百和 M301H 改下载机NAS</h3>
+    <img src="dl/preview-m301h.png" alt="M301H 下载机·NAS 面板" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
+    <p>针对<b>魔百和 M301H</b>（<b>创维 CW / 型号 M301H_CW0_AH / 海思 Hi3798MV300</b>）实测：aria2 挂机下载（磁力/BT/直链）+ Samba 家庭网盘 + 网页面板扫码加任务。<b>存储自动切换</b>——插上硬盘/U盘下载自动落到盘，没插用内部存储（vfat/exFAT/NTFS）。</p>
+    <ul class="tags"><li>下载</li><li>网盘</li><li>M301H</li><li>存储自动切换</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-m301h-nas-download.zip" download>下载 (.zip · 122K)</a></div>
+    </article>
+
+    <article class="card">
+    <span class="badge">可用</span><div class="ic">🖥️</div>
+    <h3>魔百盒 HG680-R 改桌面小电脑</h3>
+    <p>针对 <b>魔百盒 HG680-R</b>（<b>MStar / Android 4.4.4</b>）实测：桌面双击开应用 + Firefox 桌面版上网 + 当贝市场/投屏/电视直播 + 局域网互传 + <b>鼠标指针补丁（手→箭头/去白圈）</b> + 开机自启。</p>
+    <ul class="tags"><li>桌面</li><li>浏览器</li><li>型号版</li><li>指针补丁</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-hg680r-desktop-pc.zip" download>下载 (.zip · 14M)</a></div>
+    </article>
+  </div>
+  <div class="subhead"><h3>通用版 · 适用任意机顶盒</h3><span class="more">适用任意已 root 的安卓机顶盒</span></div>
   <div class="cards">
-
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🎤</div>
-      <h3>B860AV 改家庭影院 KTV 点歌台</h3>
-      <p>机顶盒 → 家庭 KTV 点歌台：开机直进点歌，<b>本地曲库 + 在线点歌</b>（网易云搜歌/热歌榜/戏曲/儿歌）；歌词卡拉OK进度染色、粒子画面不黑屏、可拖动进度条；遥控器/鼠标/手机扫码都能点歌。</p>
-      <ul class="tags"><li>KTV 点歌</li><li>本地+在线</li><li>手机扫码</li><li>U 盘歌曲</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-ktv.zip" download>下载通用安装包（在线版 · 102K）</a></div>
+    <span class="badge">可用</span><div class="ic">🎤</div>
+    <h3>B860AV 改家庭影院 KTV 点歌台</h3>
+    <p>机顶盒 → 家庭 KTV 点歌台：开机直进点歌，<b>本地曲库 + 在线点歌</b>（网易云搜歌/热歌榜/戏曲/儿歌）；歌词卡拉OK进度染色、粒子画面不黑屏、可拖动进度条；遥控器/鼠标/手机扫码都能点歌。</p>
+    <ul class="tags"><li>KTV 点歌</li><li>本地+在线</li><li>手机扫码</li><li>U 盘歌曲</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-ktv.zip" download>下载通用安装包（在线版 · 102K）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🎮</div>
-      <h3>机顶盒改游戏机</h3>
-      <p>开机即玩的家庭游戏主机：8 款原生小游戏（打砖块/俄罗斯方块/2048/贪吃蛇/打地鼠/坦克大战/乒乓球/飞机大战）+ 学科 / 考证 / 教学游戏。1–9 人同屏，手机扫码即可当手柄。</p>
-      <ul class="tags"><li>离线</li><li>多人同屏</li><li>手机手柄</li><li>在线更新</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-game-console.zip" download>下载通用安装包（在线版 · 296K）</a></div>
+    <span class="badge">可用</span><div class="ic">🎮</div>
+    <h3>机顶盒改游戏机</h3>
+    <p>开机即玩的家庭游戏主机：8 款原生小游戏（打砖块/俄罗斯方块/2048/贪吃蛇/打地鼠/坦克大战/乒乓球/飞机大战）+ 学科 / 考证 / 教学游戏。1–9 人同屏，手机扫码即可当手柄。</p>
+    <ul class="tags"><li>离线</li><li>多人同屏</li><li>手机手柄</li><li>在线更新</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-game-console.zip" download>下载通用安装包（在线版 · 296K）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🖥️</div>
-      <h3>机顶盒改电脑主机</h3>
-      <p>把盒子变成轻量小主机：原生桌面 + 浏览器 + 中文输入法 + 局域网互传 + 接 U 盘；把存储当内存扩容，开机自愈，日常办公/冲浪够用。</p>
-      <ul class="tags"><li>桌面环境</li><li>浏览器</li><li>互传</li><li>扩容</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-desktop-pc.zip" download>下载通用安装包（在线版 · 596K）</a></div>
+    <span class="badge">可用</span><div class="ic">🖥️</div>
+    <h3>机顶盒改电脑主机</h3>
+    <p>把盒子变成轻量小主机：原生桌面 + 浏览器 + 中文输入法 + 局域网互传 + 接 U 盘；把存储当内存扩容，开机自愈，日常办公/冲浪够用。</p>
+    <ul class="tags"><li>桌面环境</li><li>浏览器</li><li>互传</li><li>扩容</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-desktop-pc.zip" download>下载通用安装包（在线版 · 596K）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🖥️</div>
-      <h3>魔百盒 HG680-R 改桌面小电脑</h3>
-      <p>针对 <b>魔百盒 HG680-R</b>（<b>MStar / Android 4.4.4</b>）实测：桌面双击开应用 + Firefox 桌面版上网 + 当贝市场/投屏/电视直播 + 局域网互传 + <b>鼠标指针补丁（手→箭头/去白圈）</b> + 开机自启。</p>
-      <ul class="tags"><li>桌面</li><li>浏览器</li><li>型号版</li><li>指针补丁</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-hg680r-desktop-pc.zip" download>下载 (.zip · 14M)</a></div>
+    <span class="badge">可用</span><div class="ic">📹</div>
+    <h3>机顶盒改监控录像主机</h3>
+    <p>插一个 USB 摄像头即成监控：MJPEG 直播 + 30 秒循环录像 + 手机远程看 + 移动侦测 + YOLO 物体识别 + 告警推送；多路摄像头 4 宫格，录像可落内部/SD/U 盘。</p>
+    <ul class="tags"><li>循环录像</li><li>远程查看</li><li>AI 识别</li><li>告警推送</li></ul>
+    <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/tvbox-surveillance/releases/download/v1.0/openhwlab-surveillance-offline.zip">下载通用安装包（完整离线版 · 215MB）</a><a class="btn ghost" href="dl/openhwlab-surveillance.zip" download>下载通用安装包（在线版 · 11M）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">📹</div>
-      <h3>机顶盒改监控录像主机</h3>
-      <p>插一个 USB 摄像头即成监控：MJPEG 直播 + 30 秒循环录像 + 手机远程看 + 移动侦测 + YOLO 物体识别 + 告警推送；多路摄像头 4 宫格，录像可落内部/SD/U 盘。</p>
-      <ul class="tags"><li>循环录像</li><li>远程查看</li><li>AI 识别</li><li>告警推送</li></ul>
-      <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/tvbox-surveillance/releases/download/v1.0/openhwlab-surveillance-offline.zip">下载通用安装包（完整离线版 · 215MB）</a><a class="btn ghost" href="dl/openhwlab-surveillance.zip" download>下载通用安装包（在线版 · 11M）</a></div>
+    <span class="badge">可用</span><div class="ic">🖨️</div>
+    <h3>机顶盒改打印机服务器</h3>
+    <p>把老旧 USB 打印机变成网络打印机：手机/电脑打开网页即可拖拽打印，支持 AirPrint 与 IPP 直连，自动识别打印机型号并联网装驱动，还能打印二维码贴纸。</p>
+    <ul class="tags"><li>网络打印</li><li>AirPrint</li><li>扫码传件</li><li>驱动向导</li></ul>
+    <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/tvbox-print-server/releases/download/v1.0/openhwlab-print-server-offline.zip">下载通用安装包（完整离线版 · 76MB）</a><a class="btn ghost" href="dl/openhwlab-print-server.zip" download>下载通用安装包（在线版 · 392K）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🖨️</div>
-      <h3>机顶盒改打印机服务器</h3>
-      <p>把老旧 USB 打印机变成网络打印机：手机/电脑打开网页即可拖拽打印，支持 AirPrint 与 IPP 直连，自动识别打印机型号并联网装驱动，还能打印二维码贴纸。</p>
-      <ul class="tags"><li>网络打印</li><li>AirPrint</li><li>扫码传件</li><li>驱动向导</li></ul>
-      <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/tvbox-print-server/releases/download/v1.0/openhwlab-print-server-offline.zip">下载通用安装包（完整离线版 · 76MB）</a><a class="btn ghost" href="dl/openhwlab-print-server.zip" download>下载通用安装包（在线版 · 392K）</a></div>
+    <span class="badge">可用</span><div class="ic">⬇️</div>
+    <h3>机顶盒变下载机NAS</h3>
+    <p>闲置盒子 + USB 硬盘 = 挂机下载 + 家庭网盘：aria2 下载（磁力/BT/直链）、Samba 网盘、扫码加任务、开机直进管理面板。</p>
+    <ul class="tags"><li>下载</li><li>网盘</li><li>离线下载</li><li>扫码</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-nas-download.zip" download>下载通用安装包（在线版 · 348K）</a></div>
     </article>
 
     <article class="card">
-      <span class="badge">可用</span><div class="ic">🖨️</div>
-      <h3>魔百和 CM201-1 改打印机服务器</h3>
-      <img src="dl/preview-cm201-1.jpg" alt="print server panel" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
-      <p>把吃灰的<b>魔百和 CM201-1</b>盒子变成网络打印机：手机上网页/扫码打印，支持 IPP 直连。<b>驱动自适应多品牌</b>——插上自动识别型号、从内置驱动库匹配（HP / 兄弟 / 联想 / 爱普生 / 佳能 等），认不出的可传 .ppd；HP LaserJet 1018/1020/1022 更是插上即自动灌固件出纸。</p>
-      <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-cm201-1-print-server.zip" download>下载 (.zip · 1224K)</a></div>
+    <span class="badge">可用</span><div class="ic">🛡️</div>
+    <h3>机顶盒变去广告DNS盒子</h3>
+    <p>闲置盒子 = 局域网 DNS（AdGuard Home）：全家设备自动去广告、防跟踪，一次配置全屋生效。</p>
+    <ul class="tags"><li>去广告</li><li>DNS</li><li>旁路由</li><li>防跟踪</li></ul>
+    <div class="dl"><a class="btn" href="dl/openhwlab-adblock-dns.zip" download>下载通用安装包（在线版 · 280K）</a></div>
     </article>
-
-    <article class="card">
-      <span class="badge">可用</span><div class="ic">🖨️</div>
-      <h3>魔百和 CM201-2 改打印机服务器</h3>
-      <img src="dl/preview-cm201-2.jpg" alt="print server panel" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
-      <p>把吃灰的<b>魔百和 CM201-2</b>（海思 Hi3798MV300 / Android 4.4.2）变成网络打印机：网页/扫码打印、IPP 直连。<b>驱动自适应多品牌</b>（HP/兄弟/联想/爱普生/佳能 等），HP LaserJet 1018/1020/1022/1022n 插上即自动灌固件出纸；联想 M7206W 等主机型走 brlaser（本机实测）。开机自动进打印桌面。</p>
-      <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
-      <div class="dl"><a class="btn" href="https://github.com/OpenHWLabcom/cm201-2-print-server/releases/download/v2.0/openhwlab-cm201-2-print-server-full.zip">⬇ 下载完整离线包 (67MB · 含系统+依赖)</a><a class="btn ghost" href="dl/openhwlab-cm201-2-print-server.zip" download>精简包 (.zip · 1233K)</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge">可用</span><div class="ic">⬇️</div>
-      <h3>机顶盒变下载机NAS</h3>
-      <p>闲置盒子 + USB 硬盘 = 挂机下载 + 家庭网盘：aria2 下载（磁力/BT/直链）、Samba 网盘、扫码加任务、开机直进管理面板。</p>
-      <ul class="tags"><li>下载</li><li>网盘</li><li>离线下载</li><li>扫码</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-nas-download.zip" download>下载通用安装包（在线版 · 348K）</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge">可用</span><div class="ic">⬇️</div>
-      <h3>魔百和 M301H 改下载机NAS</h3>
-      <img src="dl/preview-m301h.png" alt="M301H 下载机·NAS 面板" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
-      <p>针对<b>魔百和 M301H</b>（<b>创维 CW / 型号 M301H_CW0_AH / 海思 Hi3798MV300</b>）实测：aria2 挂机下载（磁力/BT/直链）+ Samba 家庭网盘 + 网页面板扫码加任务。<b>存储自动切换</b>——插上硬盘/U盘下载自动落到盘，没插用内部存储（vfat/exFAT/NTFS）。</p>
-      <ul class="tags"><li>下载</li><li>网盘</li><li>M301H</li><li>存储自动切换</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-m301h-nas-download.zip" download>下载 (.zip · 122K)</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge">可用</span><div class="ic">🛡️</div>
-      <h3>机顶盒变去广告DNS盒子</h3>
-      <p>闲置盒子 = 局域网 DNS（AdGuard Home）：全家设备自动去广告、防跟踪，一次配置全屋生效。</p>
-      <ul class="tags"><li>去广告</li><li>DNS</li><li>旁路由</li><li>防跟踪</li></ul>
-      <div class="dl"><a class="btn" href="dl/openhwlab-adblock-dns.zip" download>下载通用安装包（在线版 · 280K）</a></div>
-    </article>
-
   </div>
   <p class="note">通用前提：盒子<b>已 root</b>、能开 <b>ADB</b>；<b>不刷机</b>，可随时卸载还原。详见 <a href="docs.html">教程</a>。</p>
 </section>
