@@ -72,6 +72,7 @@ h2 .n{color:var(--mut2);font-size:15px;font-weight:500;margin-left:8px}
 /* ---------- cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cards.two{grid-template-columns:repeat(2,1fr)}
+.cards.four{grid-template-columns:repeat(4,1fr)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;
   display:flex;flex-direction:column;transition:.15s;position:relative}
 .card:hover{border-color:#345a8f;transform:translateY(-2px)}
@@ -121,12 +122,12 @@ footer a:hover{color:#fff}
 footer .disc{color:#5d6f8a;font-size:12px;margin-top:16px}
 
 @media(max-width:820px){
-  .cards,.cards.two{grid-template-columns:1fr 1fr}
+  .cards,.cards.two,.cards.four{grid-template-columns:1fr 1fr}
   .grid-list{grid-template-columns:1fr}
   .nav nav a{margin-left:10px;font-size:13px}
 }
 @media(max-width:600px){
-  .cards,.cards.two{grid-template-columns:1fr}
+  .cards,.cards.two,.cards.four{grid-template-columns:1fr}
   .hero{padding:48px 0 30px}
   .brand span.t{display:none}
 }
