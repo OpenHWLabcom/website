@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全部项目 · OpenHW Lab</title>
-<meta name="description" content="OpenHW Lab 全部开源项目：机顶盒改造系列、ESP32/STM32 单片机、视觉 AI。">
+<meta name="description" content="OpenHW Lab 开源项目：机顶盒改造系列（游戏机 / 电脑主机 / 监控录像 / 打印机服务器 / 下载机NAS / 去广告DNS）。">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="assets/logo.svg">
 <link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/projects.html">
@@ -31,7 +31,7 @@
 
 <section class="wrap" style="padding-top:44px">
   <h2>全部项目</h2>
-  <p class="lead">这里汇集 OpenHW Lab 的所有开源项目。已发布的方案可直接下载；标注「源码 / 整理中」的会陆续补齐安装包与教程。</p>
+  <p class="lead">这里汇集 OpenHW Lab 的机顶盒改造方案，每个都附安装包与教程，可直接下载。</p>
 </section>
 
 <main>
@@ -143,63 +143,6 @@
   <p class="note">通用前提：盒子<b>已 root</b>、能开 <b>ADB</b>；<b>不刷机</b>，可随时卸载还原。详见 <a href="docs.html">教程</a>。</p>
 </section>
 
-<section class="wrap" id="hw">
-  <div class="sec-head"><h2>硬件 · 单片机<span class="n">ESP32 / STM32</span></h2></div>
-  <div class="cards">
-
-    <article class="card">
-      <span class="badge soon">源码</span><div class="ic">🕹️</div>
-      <h3>ESP32-P4 实体摇杆手柄</h3>
-      <p>用 ESP32-P4 + 模拟摇杆 + 按键做成实体手柄，经主机中继接入机顶盒游戏厅。含 ADC 读数、去抖、串口协议与演示页。</p>
-      <ul class="tags"><li>ESP32-P4</li><li>摇杆</li><li>中继</li></ul>
-      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge soon">源码</span><div class="ic">🔦</div>
-      <h3>ESP32-P4 激光探测器</h3>
-      <p>激光/光电传感器 + ESP32-P4，检测光束遮挡并实时网页显示，可做防盗报警或计数。</p>
-      <ul class="tags"><li>ESP32-P4</li><li>传感</li><li>网页</li></ul>
-      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge soon">源码</span><div class="ic">👆</div>
-      <h3>STM32 敲击 / 倾斜传感器</h3>
-      <p>STM32F103 蓝药丸入门：敲击（KY-031）与倾斜开关采集，串口上报 + 网页可视化。</p>
-      <ul class="tags"><li>STM32</li><li>入门</li><li>串口</li></ul>
-      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
-    </article>
-
-    <article class="card">
-      <span class="badge soon">源码</span><div class="ic">🎛️</div>
-      <h3>ESP32 控制 / 传感合集</h3>
-      <p>一串 ESP32 小实验：GPIO/ADC 读写、串口桥、传感器采集与网页控制台。</p>
-      <ul class="tags"><li>ESP32</li><li>合集</li></ul>
-      <div class="dl"><a class="btn ghost" href="downloads.html">整理中 →</a></div>
-    </article>
-
-  </div>
-</section>
-
-<section class="wrap" id="ai">
-  <div class="sec-head"><h2>视觉 · AI<span class="n">在路上</span></h2></div>
-  <div class="cards two">
-    <article class="card">
-      <span class="badge soon">整理中</span><div class="ic">🏃</div>
-      <h3>跑步姿态分析</h3>
-      <p>基于摄像头/姿态估计的跑步动作分析，输出关键点与姿态指标。</p>
-      <ul class="tags"><li>姿态估计</li><li>视觉</li></ul>
-    </article>
-    <article class="card">
-      <span class="badge soon">整理中</span><div class="ic">🏓</div>
-      <h3>回弹飞影球 · 互动装置</h3>
-      <p>轻量互动小游戏/装置原型，摄像头识别 + 回弹玩法。</p>
-      <ul class="tags"><li>互动</li><li>原型</li></ul>
-    </article>
-  </div>
-  <p class="note">以上为实验室正在整理的项目，欢迎关注更新。</p>
-</section>
 </main>
 
 <footer>
