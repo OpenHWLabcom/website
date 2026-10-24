@@ -15,11 +15,12 @@
 <body>
 <header class="nav">
   <div class="wrap">
-    <span class="nav-slogan">激发探索的勇气</span>
+    <span class="nav-slogan">智能硬件开放实验室研发</span>
     <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
     <nav>
       <a href="index.html">首页</a>
       <a href="projects.html">项目</a>
+      <a href="robot.html">机器人</a>
       <a href="downloads.html" class="on">下载</a>
       <a href="docs.html">教程</a>
       <a href="compare.html">对比</a>
@@ -206,6 +207,7 @@
   <table>
     <thead><tr><th>日期</th><th>方案</th><th>说明</th></tr></thead>
     <tbody>
+      <tr><td>2026-10-24</td><td>机器人开源</td><td>首个公开版本：八界 6 轴机械臂控制台 + 3D 真机仿真 + 数据采集/训练分析 + ROS 2 下位机脚本（MIT）</td></tr>
       <tr><td>2026-10-05</td><td>去广告DNS</td><td>首个公开版本：AdGuard Home DNS(:53) + 管理页(:3000) + TCP 上游 + http 过滤列表</td></tr>
       <tr><td>2026-10-05</td><td>下载机NAS</td><td>首个公开版本：aria2 下载 + Samba 网盘 + 管理面板（暂停/继续/删除）+ 手机扫码 + 开机直进</td></tr>
       <tr><td>2026-10-05</td><td>打印机服务器</td><td>首个公开版本：打印门户 + 管理页 + 驱动向导 + 二维码贴纸</td></tr>
@@ -214,6 +216,27 @@
     </tbody>
   </table>
 </section>
+<section class="wrap">
+  <div class="sec-head"><h2>机器人开源<span class="n">八界 6 轴机械臂</span></h2><span class="more">按板块分类开放源码 · MIT</span></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">🦾</div>
+      <h3>机器人开源源码包</h3>
+      <p>上位机控制台（3D 机械臂 / 夹爪 / 语音 / 指挥 / 数据采集 / 训练分析 / 测试验收）+ 下位机 ROS 2 脚本 + 网格资源 + 文档，共 232 个文件。</p>
+      <ul class="tags"><li>host/</li><li>lower/</li><li>docs/</li><li>MIT</li></ul>
+      <div class="dl">
+        <a class="btn" href="dl/openhwlab-robot-arm.zip" download>下载 .zip（3.9 MB）</a>
+        <a class="btn ghost" href="robot.html">看机器人板块</a>
+      </div>
+      <details><summary>校验 SHA-256</summary><code>c5a1810da806c8d47eead631194a85a234ff7438df9dfa6d289a93aaca805e45</code></details>
+    </article>
+    <div class="callout">
+      <b>适合谁：</b>已有 6 轴机械臂 / 升降立柱 / 两指夹爪与 ROS 2 环境的开发者；想研究 3D 真机仿真、限位保护、数据采集与模仿学习的同学。<br><br>
+      <b>包含：</b>控制台与全部前端页面、关节桥 / 模式服务 / 相机流、碰撞限位与运动学、下位机 jog / 抓取脚本、控制 API 文档与测试计划。<br><br>
+      <b>提醒：</b>机械臂是真实设备，首次运行请清空工作范围、急停在手边，先空载慢速验证。
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -221,10 +244,10 @@
     <div class="cols">
       <div>
         <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
-        <div>openhwlab.com · 开放硬件实验室<br>开放、开源、共创、共享</div>
+        <div>openhwlab.com · 智能硬件开放实验室研发<br>开放、开源、共创、共享</div>
         <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
       </div>
-      <div><b style="color:#fff">导航</b><br><a href="projects.html">项目</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a></div>
+      <div><b style="color:#fff">导航</b><br><a href="projects.html">项目</a> · <a href="robot.html">机器人</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a></div>
       <div><b style="color:#fff">开源</b><br>MIT License</div>
     </div>
     <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>

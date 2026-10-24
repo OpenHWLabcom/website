@@ -21,6 +21,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="projects.html">Projects</a>
+      <a href="robot.html">Robot</a>
       <a href="downloads.html" class="on">Downloads</a>
       <a href="docs.html">Docs</a>
       <a href="compare.html">Compare</a>
@@ -196,6 +197,7 @@
   <table>
     <thead><tr><th>Date</th><th>Kit</th><th>Notes</th></tr></thead>
     <tbody>
+      <tr><td>2026-10-24</td><td>Robot open source</td><td>First public release: 6-axis arm console + 3D digital twin + data collection/training analysis + ROS 2 lower-board scripts (MIT)</td></tr>
       <tr><td>2026-10-05</td><td>Ad-blocking DNS</td><td>First public release: AdGuard Home DNS(:53) + admin(:3000) + TCP upstream + http filter lists</td></tr>
       <tr><td>2026-10-05</td><td>Download Box + NAS</td><td>First public release: aria2 + Samba share + panel (pause/resume/delete) + QR + boot-to-panel</td></tr>
       <tr><td>2026-10-05</td><td>Print Server</td><td>First public release: print portal + admin + driver wizard + QR sheets</td></tr>
@@ -203,6 +205,27 @@
       <tr><td>2026-10-03</td><td>Game Console / Mini PC</td><td>First public release</td></tr>
     </tbody>
   </table>
+</section>
+<section class="wrap">
+  <div class="sec-head"><h2>Robot Open Source<span class="n">6-axis arm</span></h2><span class="more">Source by module · MIT</span></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">🦾</div>
+      <h3>Robot source package</h3>
+      <p>Host console (3D arm / gripper / voice / mission / data collection / training analysis / acceptance) + lower-board ROS 2 scripts + meshes + docs — 232 files.</p>
+      <ul class="tags"><li>host/</li><li>lower/</li><li>docs/</li><li>MIT</li></ul>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-robot-arm.zip" download>Download .zip (3.9 MB)</a>
+        <a class="btn ghost" href="robot.html">Robot section</a>
+      </div>
+      <details><summary>SHA-256</summary><code>c5a1810da806c8d47eead631194a85a234ff7438df9dfa6d289a93aaca805e45</code></details>
+    </article>
+    <div class="callout">
+      <b>Who it is for:</b> developers with a 6-axis arm, lift column, two-finger gripper and ROS 2 setup; anyone exploring 3D digital twins, collision limits, data collection and imitation learning.<br><br>
+      <b>Inside:</b> console and all front-end pages, joint bridge / mode service / camera streams, collision guard and kinematics, lower-board jog &amp; grasp scripts, control API docs and test plan.<br><br>
+      <b>Safety:</b> the arm is a real machine. Clear the workspace, keep the E-stop in hand and validate unloaded at slow speed first.
+    </div>
+  </div>
 </section>
 </main>
 
@@ -214,7 +237,7 @@
         <div>openhwlab.com · OpenHW Lab<br>Open · Open-Source · Co-create · Share</div>
         <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ: 1030889574</div>
       </div>
-      <div><b style="color:#fff">Site</b><br><a href="projects.html">Projects</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">Site</b><br><a href="projects.html">Projects</a> · <a href="robot.html">Robot</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
       <div><b style="color:#fff">Open source</b><br>MIT License</div>
     </div>
     <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>

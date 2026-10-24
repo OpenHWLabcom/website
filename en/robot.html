@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robot Open Source · 6-Axis Arm · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab robot open-source section: the BaJie 6-axis arm, fully open — 3D digital twin, control console, vision & voice, grasping, data collection/annotation, training analysis and acceptance tests. Grouped by Control / Data & Training / Test & Acceptance / Tools. MIT licensed, source package included.">
+<meta name="keywords" content="robot open source,6-axis robotic arm,robot control,ROS2,3D digital twin,grasping,data collection,imitation learning,open hardware,openhwlab">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="../assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/en/robot.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/robot.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/robot.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/robot.html">
+<meta property="og:title" content="Robot Open Source · 6-Axis Arm">
+<meta property="og:description" content="3D digital twin, console, vision & voice, data collection and training loop — fully open source, grouped by module.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.openhwlab.com/en/robot.html">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">The courage to explore</span>
+    <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="robot.html" class="on">Robot</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="docs.html">Docs</a>
+      <a href="compare.html">Compare</a>
+      <a href="about.html">About</a>
+      <a class="lang" href="../robot.html"><b>中文</b></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 34px">
+  <div class="wrap">
+    <h1>Robot <span class="hl">Open Source</span></h1>
+    <p class="tag">6-axis arm · open from control to training</p>
+    <p class="sub">3D digital twin, visual console, vision and voice, grasping strategies, data collection & annotation, training analysis and acceptance tests.<br>Source opened by four modules — Control / Data &amp; Training / Test &amp; Acceptance / Tools. MIT licensed.</p>
+    <div class="cta">
+      <a class="btn" href="../dl/openhwlab-robot-arm.zip" download>↓ Download source (3.9 MB)</a>
+      <a class="btn ghost" href="#control">Browse by module</a>
+    </div>
+    <p class="meta">Control · Data &amp; Training · Test &amp; Acceptance · Tools</p>
+  </div>
+</section>
+
+<main>
+<section class="wrap" style="padding-top:6px">
+  <div class="cards four">
+    <article class="card">
+      <div class="ic">🦾</div>
+      <h3>Hardware</h3>
+      <p><b>6-axis collaborative arm</b> + lift column (0–0.44 m) + two-finger gripper (0–0.69), head and wrist cameras.</p>
+      <ul class="tags"><li>6-axis</li><li>Lift</li><li>Gripper</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">🧠</div>
+      <h3>Control stack</h3>
+      <p><b>Jetson → adb → chroot → ssh → ROS 2</b>: joint trajectories, streaming jog, collision guards, auto real/local mode.</p>
+      <ul class="tags"><li>ROS 2</li><li>Safety guard</li><li>Auto switch</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">👁️</div>
+      <h3>Perception &amp; HMI</h3>
+      <p>Head / wrist camera streams, object detection, voice commands and TTS, mission command entry.</p>
+      <ul class="tags"><li>Vision</li><li>Voice</li><li>Mission</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">🔁</div>
+      <h3>Data loop</h3>
+      <p><b>Collect → annotate → limits → training analysis → acceptance</b>, with a tool and data format for each step.</p>
+      <ul class="tags"><li>Collect</li><li>Train</li><li>Accept</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="control">
+  <div class="sec-head"><h2>Control<span class="n">5 modules · operation layer</span></h2><span class="more">From joint execution to 3D twin, gripper, voice and missions</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🎛️</div>
+      <h3>Main console</h3>
+      <p>Live dashboard, dev console, robot app, joint execution, lift and gripper control; motion log and state monitoring.</p>
+      <ul class="tags"><li>Control</li><li>Debug</li><li>Joints</li></ul>
+      <details><summary>Source</summary><code>host/index.html · host/joints_bridge.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🤖</div>
+      <h3>3D arm</h3>
+      <p>Real meshes, drag teaching, fixed-point head motion, live limit guard, wave mode; zoom and fixed camera pose.</p>
+      <ul class="tags"><li>3D</li><li>Real robot</li><li>Head fix</li></ul>
+      <details><summary>Source</summary><code>host/arm3d.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">✊</div>
+      <h3>Gripper control</h3>
+      <p>Opening slider, close / full-close / open actions, live feedback; drag and one-tap motions.</p>
+      <ul class="tags"><li>Gripper</li><li>Open/close</li></ul>
+      <details><summary>Source</summary><code>host/grip.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🎙️</div>
+      <h3>Voice control</h3>
+      <p>Voice commands, TTS announcements, microphone state; turn frequent motions into one sentence.</p>
+      <ul class="tags"><li>Voice</li><li>HMI</li></ul>
+      <details><summary>Source</summary><code>host/voice.html · host/voice_server.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🕹️</div>
+      <h3>Mission command</h3>
+      <p>Robot command / mission entry with unified dispatch and status feedback.</p>
+      <ul class="tags"><li>Mission</li><li>Command</li></ul>
+      <details><summary>Source</summary><code>host/cmd.html</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="data">
+  <div class="sec-head"><h2>Data &amp; Training<span class="n">4 modules · data loop</span></h2><span class="more">Collect → annotate → limits → analyse; make motions reproducible</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">📊</div>
+      <h3>Training data analysis</h3>
+      <p>Task filters, quality metrics, action Δp99, episode replay and HDF5 dataset browsing — see if a sample is usable.</p>
+      <ul class="tags"><li>Dataset</li><li>Analysis</li><li>Replay</li></ul>
+      <details><summary>Source</summary><code>host/data_viewer.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🎥</div>
+      <h3>Fixed-point data collection</h3>
+      <p>3D preview, real/sim fixed-point head motion, live state, head &amp; wrist cameras, episode marking and saving.</p>
+      <ul class="tags"><li>Collect</li><li>Head fix</li><li>Episode</li></ul>
+      <details><summary>Source</summary><code>host/headfix_collect.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">📐</div>
+      <h3>Limit database</h3>
+      <p>Critical tip angles, direction coverage, SQLite records and CSV export — quantify table/column boundaries.</p>
+      <ul class="tags"><li>Limits</li><li>Calibration</li><li>SQLite</li></ul>
+      <details><summary>Source</summary><code>host/headfix_limits.html · host/limits_db.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🏷️</div>
+      <h3>Annotation</h3>
+      <p>Annotate grasp objects and placement locations with head &amp; wrist camera views; produce a trainable dataset.</p>
+      <ul class="tags"><li>Annotation</li><li>Vision</li></ul>
+      <details><summary>Source</summary><code>host/annotate.html</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="test">
+  <div class="sec-head"><h2>Test &amp; Acceptance<span class="n">1 system · reliability</span></h2><span class="more">From “it moves” to “it is reliable”</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">✅</div>
+      <h3>Test plan</h3>
+      <p>Motion / calibration / perception / data / training / reliability checklists and progress — the acceptance baseline.</p>
+      <ul class="tags"><li>Test</li><li>Acceptance</li><li>Progress</li></ul>
+      <details><summary>Source</summary><code>host/test_plan.html · docs/test_plan.json</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="tools">
+  <div class="sec-head"><h2>Tools<span class="n">3 tools · authoring &amp; debug</span></h2><span class="more">Motion authoring and camera debug</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">💃</div>
+      <h3>Dance editor</h3>
+      <p>Keyframe authoring, 3D preview, import/export and real-robot playback — turn a sequence into a reusable show.</p>
+      <ul class="tags"><li>Motion</li><li>Authoring</li><li>3D</li></ul>
+      <details><summary>Source</summary><code>host/dance_editor.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">📷</div>
+      <h3>Head camera</h3>
+      <p>Head detection stream (percd, :8799) as live MJPEG for global view and target finding.</p>
+      <ul class="tags"><li>Camera</li><li>Head</li></ul>
+      <details><summary>Source</summary><code>host/camfeed.py · lower/jogd/percd.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">Open</span>
+      <div class="ic">🎯</div>
+      <h3>Wrist camera</h3>
+      <p>Wrist / gripper detection stream (percg, :8800) as live MJPEG for fine alignment and grasp confirmation.</p>
+      <ul class="tags"><li>Camera</li><li>Wrist</li></ul>
+      <details><summary>Source</summary><code>host/camfeed.py · lower/jogd/percg.py</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>Download &amp; Quick Start<span class="n">MIT · source package</span></h2></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">📦</div>
+      <h3>Robot source package</h3>
+      <p>Host console + lower-board scripts + meshes + docs — 232 files.</p>
+      <ul class="tags"><li>host/</li><li>lower/</li><li>docs/</li><li>MIT</li></ul>
+      <div class="dl">
+        <a class="btn" href="../dl/openhwlab-robot-arm.zip" download>Download .zip (3.9 MB)</a>
+      </div>
+      <details><summary>SHA-256</summary><code>c5a1810da806c8d47eead631194a85a234ff7438df9dfa6d289a93aaca805e45</code></details>
+    </article>
+    <div class="callout">
+      <b>Three steps:</b>
+      <ol class="steps">
+        <li>Unzip and edit paths plus <code>ROBOT_HOST</code> / <code>ROBOT_PW</code> in <code>host/serve.sh</code>.</li>
+        <li>On the host run <code>bash host/serve.sh</code>, open <code>http://&lt;jetson-ip&gt;:8790/robot_home.html</code>.</li>
+        <li>Put <code>lower/jogd</code> on the lower board and start <code>jtstream.py</code> to connect ROS 2.</li>
+      </ol>
+      <div style="margin-top:10px"><a class="btn ghost" href="docs.html">Read docs →</a></div>
+    </div>
+  </div>
+  <p class="note">No robot? You can still open <code>arm3d.html</code> and other pages with a local static server to explore the 3D model and UI.</p>
+  <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ Safety: the arm is a powerful real machine. Clear the workspace, keep the E-stop in hand, and validate unloaded at slow speed first. Always approach grasps from above. See <code>docs/MOTION_RULES.md</code> and <code>docs/GRASP_RULES.md</code>.</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="../assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · Built by the Intelligent Hardware Open Lab<br>Open · Open source · Co-create · Share</div>
+        <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a></div>
+      </div>
+      <div>
+        <b style="color:#fff">Navigate</b><br>
+        <a href="projects.html">Projects</a> · <a href="robot.html">Robot</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a>
+      </div>
+      <div>
+        <b style="color:#fff">License</b><br>
+        MIT License
+      </div>
+    </div>
+    <p class="disc">For learning and research only. Robot motion is risky — assess and use at your own risk. Follow local laws and warranty terms. Provided “AS IS”, without warranty of any kind.</p>
+  </div>
+</footer>
+</body>
+</html>

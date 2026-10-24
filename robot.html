@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机器人开源 · 八界 6 轴机械臂 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 机器人开源板块：八界 6 轴机械臂全栈开放——3D 真机仿真、可视化控制台、视觉语音、抓取策略、数据采集标注、训练分析与测试验收。按「控制 / 数据与训练 / 测试与验收 / 工具」分类，MIT 许可，附源码包。">
+<meta name="keywords" content="机器人开源,6轴机械臂,机械臂控制,ROS2,3D仿真,抓取,数据采集,模仿学习,open hardware,openhwlab">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/robot.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/robot.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/robot.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/robot.html">
+<meta property="og:title" content="机器人开源 · 八界 6 轴机械臂">
+<meta property="og:description" content="3D 真机仿真、控制台、视觉语音、数据采集与训练闭环，按板块分类全栈开源。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.openhwlab.com/robot.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">智能硬件开放实验室研发</span>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="projects.html">项目</a>
+      <a href="robot.html" class="on">机器人</a>
+      <a href="downloads.html">下载</a>
+      <a href="docs.html">教程</a>
+      <a href="compare.html">对比</a>
+      <a href="about.html">关于</a>
+      <a class="lang" href="en/robot.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:56px 0 34px">
+  <div class="wrap">
+    <h1>机器人<span class="hl">开源</span></h1>
+    <p class="tag">八界 6 轴机械臂 · 从控制到训练全栈开放</p>
+    <p class="sub">3D 真机仿真、可视化控制台、视觉与语音、抓取策略、数据采集标注、训练分析与测试验收。<br>按「控制 / 数据与训练 / 测试与验收 / 工具」四大板块开放源码，MIT 许可。</p>
+    <div class="cta">
+      <a class="btn" href="dl/openhwlab-robot-arm.zip" download>↓ 下载源码包（3.9 MB）</a>
+      <a class="btn ghost" href="#control">按板块浏览</a>
+    </div>
+    <p class="meta">控制 · 数据与训练 · 测试与验收 · 工具</p>
+  </div>
+</section>
+
+<main>
+<section class="wrap" style="padding-top:6px">
+  <div class="cards four">
+    <article class="card">
+      <div class="ic">🦾</div>
+      <h3>硬件本体</h3>
+      <p><b>6 轴协作机械臂</b> + 升降立柱（0–0.44 m）+ 两指夹爪（0–0.69），头部与腕部双相机。</p>
+      <ul class="tags"><li>6 轴</li><li>升降</li><li>夹爪</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">🧠</div>
+      <h3>控制链路</h3>
+      <p><b>Jetson → adb → chroot → ssh → ROS 2</b>；关节轨迹、流式 jog、碰撞限位与真机/本地模式自动切换。</p>
+      <ul class="tags"><li>ROS 2</li><li>限位保护</li><li>自动切换</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">👁️</div>
+      <h3>感知与交互</h3>
+      <p>头部 / 腕部相机实时推流、物体识别、语音指令与播报、任务指挥入口。</p>
+      <ul class="tags"><li>视觉</li><li>语音</li><li>指挥</li></ul>
+    </article>
+    <article class="card">
+      <div class="ic">🔁</div>
+      <h3>数据闭环</h3>
+      <p><b>采集 → 标注 → 限位 → 训练分析 → 测试验收</b>，每一步都有对应工具与数据格式。</p>
+      <ul class="tags"><li>采集</li><li>训练</li><li>验收</li></ul>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="control">
+  <div class="sec-head"><h2>控制<span class="n">5 个子系统 · 操作层</span></h2><span class="more">从关节执行到 3D 仿真、夹爪、语音与任务指挥</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🎛️</div>
+      <h3>主控制台</h3>
+      <p>实时看板、开发控制台、机器人 App、关节执行、升降与夹爪控制；内置运动日志与状态监控。</p>
+      <ul class="tags"><li>控制</li><li>调试</li><li>关节</li></ul>
+      <details><summary>源码位置</summary><code>host/index.html · host/joints_bridge.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🤖</div>
+      <h3>3D 机械臂</h3>
+      <p>真机网格、拖拽示教、定点头、实时限位保护、波浪模式；支持滚轮缩放与固定视角。</p>
+      <ul class="tags"><li>3D</li><li>真机</li><li>定点头</li></ul>
+      <details><summary>源码位置</summary><code>host/arm3d.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">✊</div>
+      <h3>夹爪控制</h3>
+      <p>夹爪开度滑杆、合爪 / 全闭 / 张爪、实时开度反馈；支持拖拽与一键动作。</p>
+      <ul class="tags"><li>夹爪</li><li>开合</li></ul>
+      <details><summary>源码位置</summary><code>host/grip.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🎙️</div>
+      <h3>语音控制</h3>
+      <p>语音指令、TTS 播报、麦克风状态；把常用动作变成一句话。</p>
+      <ul class="tags"><li>语音</li><li>交互</li></ul>
+      <details><summary>源码位置</summary><code>host/voice.html · host/voice_server.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🕹️</div>
+      <h3>指挥系统</h3>
+      <p>机器人指挥 / 任务指令入口，统一的任务下发与状态回传。</p>
+      <ul class="tags"><li>任务</li><li>指挥</li></ul>
+      <details><summary>源码位置</summary><code>host/cmd.html</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="data">
+  <div class="sec-head"><h2>数据与训练<span class="n">4 个子系统 · 数据闭环</span></h2><span class="more">采集 → 标注 → 限位 → 分析，让动作可复现</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">📊</div>
+      <h3>训练数据综合分析台</h3>
+      <p>任务筛选、质量指标、动作 Δp99、逐条回放与 HDF5 数据集浏览，快速判断一条数据能不能用。</p>
+      <ul class="tags"><li>训练数据</li><li>分析</li><li>回放</li></ul>
+      <details><summary>源码位置</summary><code>host/data_viewer.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🎥</div>
+      <h3>定点头数据采集</h3>
+      <p>3D 预览、真机 / 仿真定点头、实时状态、头部与腕部相机、episode 标记与保存。</p>
+      <ul class="tags"><li>采集</li><li>定点头</li><li>episode</li></ul>
+      <details><summary>源码位置</summary><code>host/headfix_collect.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">📐</div>
+      <h3>限位数据库</h3>
+      <p>爪头临界角点位、方向覆盖检查、SQLite 记录与 CSV 导出，把“贴桌/贴柱”的边界量化。</p>
+      <ul class="tags"><li>限位</li><li>标定</li><li>SQLite</li></ul>
+      <details><summary>源码位置</summary><code>host/headfix_limits.html · host/limits_db.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🏷️</div>
+      <h3>标注训练</h3>
+      <p>抓取物 / 存放位置标注，头部与爪子双相机画面联动，产出可训练的数据集。</p>
+      <ul class="tags"><li>标注</li><li>视觉</li></ul>
+      <details><summary>源码位置</summary><code>host/annotate.html</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="test">
+  <div class="sec-head"><h2>测试与验收<span class="n">1 个系统 · 可靠性</span></h2><span class="more">把“能动”变成“可靠”</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">✅</div>
+      <h3>测试计划清单</h3>
+      <p>运动 / 标定 / 感知 / 数据 / 训练 / 可靠性测试清单与完成进度，作为交付前的验收基线。</p>
+      <ul class="tags"><li>测试</li><li>验收</li><li>进度</li></ul>
+      <details><summary>源码位置</summary><code>host/test_plan.html · docs/test_plan.json</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="tools">
+  <div class="sec-head"><h2>工具<span class="n">3 个工具 · 编排与调试</span></h2><span class="more">动作编排、相机调试</span></div>
+  <div class="cards">
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">💃</div>
+      <h3>舞蹈编辑器</h3>
+      <p>关键帧编排、3D 预览、导入 / 导出、真机播放，把一串动作变成可复用的节目。</p>
+      <ul class="tags"><li>动作</li><li>编排</li><li>3D</li></ul>
+      <details><summary>源码位置</summary><code>host/dance_editor.html</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">📷</div>
+      <h3>头部相机</h3>
+      <p>头部识别画面（percd，:8799）实时 MJPEG，用于观察全局与定位目标。</p>
+      <ul class="tags"><li>相机</li><li>头部</li></ul>
+      <details><summary>源码位置</summary><code>host/camfeed.py · lower/jogd/percd.py</code></details>
+    </article>
+    <article class="card">
+      <span class="badge">源码开放</span>
+      <div class="ic">🎯</div>
+      <h3>爪子相机</h3>
+      <p>腕部 / 爪子识别画面（percg，:8800）实时 MJPEG，用于精定位与抓取确认。</p>
+      <ul class="tags"><li>相机</li><li>手腕</li></ul>
+      <details><summary>源码位置</summary><code>host/camfeed.py · lower/jogd/percg.py</code></details>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>下载与快速开始<span class="n">MIT · 源码包</span></h2></div>
+  <div class="cards two">
+    <article class="card">
+      <div class="ic">📦</div>
+      <h3>机器人开源源码包</h3>
+      <p>上位机控制台 + 下位机脚本 + 网格资源 + 文档，共 232 个文件。</p>
+      <ul class="tags"><li>host/</li><li>lower/</li><li>docs/</li><li>MIT</li></ul>
+      <div class="dl">
+        <a class="btn" href="dl/openhwlab-robot-arm.zip" download>下载 .zip（3.9 MB）</a>
+      </div>
+      <details><summary>校验 SHA-256</summary><code>c5a1810da806c8d47eead631194a85a234ff7438df9dfa6d289a93aaca805e45</code></details>
+    </article>
+    <div class="callout">
+      <b>三步跑起来：</b>
+      <ol class="steps">
+        <li>解压源码包，按你的环境改 <code>host/serve.sh</code> 里的路径与 <code>ROBOT_HOST</code> / <code>ROBOT_PW</code>。</li>
+        <li>上位机执行 <code>bash host/serve.sh</code>，打开 <code>http://&lt;jetson-ip&gt;:8790/robot_home.html</code>。</li>
+        <li>下位机放好 <code>lower/jogd</code>，启动 <code>jtstream.py</code> 即可联通 ROS 2。</li>
+      </ol>
+      <div style="margin-top:10px"><a class="btn ghost" href="docs.html">查看教程 →</a></div>
+    </div>
+  </div>
+  <p class="note">没有机器人也能看：直接打开 <code>arm3d.html</code> 等页面即可浏览 3D 与界面（需要本地静态服务）。</p>
+  <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ 安全提示：机械臂是有力量的真实设备。首次运行请清空工作范围、急停放在手边，先空载慢速验证；抓取只允许从上往下接近。详见 <code>docs/MOTION_RULES.md</code> 与 <code>docs/GRASP_RULES.md</code>。</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · 智能硬件开放实验室研发<br>开放、开源、共创、共享</div>
+        <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
+      </div>
+      <div>
+        <b style="color:#fff">导航</b><br>
+        <a href="projects.html">项目</a> · <a href="robot.html">机器人</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a>
+      </div>
+      <div>
+        <b style="color:#fff">开源</b><br>
+        MIT License
+      </div>
+    </div>
+    <p class="disc">仅供学习与研究。机器人运动有风险，请自行评估、自负后果；请遵守当地法律法规与设备保修条款。本工具按「现状(AS IS)」提供，无任何担保。</p>
+  </div>
+</footer>
+</body>
+</html>
