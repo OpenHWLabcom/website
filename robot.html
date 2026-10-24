@@ -27,7 +27,6 @@
       <a href="index.html">首页</a>
       <a href="projects.html">机顶盒</a>
       <a href="robot.html" class="on">机器人</a>
-      <a href="downloads.html">下载</a>
       <a href="docs.html">教程</a>
       <a href="compare.html">对比</a>
       <a href="about.html">关于</a>
@@ -207,7 +206,7 @@
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="downloads">
   <div class="sec-head"><h2>下载与快速开始<span class="n">MIT · 源码包</span></h2></div>
   <div class="cards two">
     <article class="card">
@@ -233,6 +232,13 @@
   <p class="note">没有机器人也能看：直接打开 <code>arm3d.html</code> 等页面即可浏览 3D 与界面（需要本地静态服务）。</p>
   <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ 安全提示：机械臂是有力量的真实设备。首次运行请清空工作范围、急停放在手边，先空载慢速验证；抓取只允许从上往下接近。详见 <code>docs/MOTION_RULES.md</code> 与 <code>docs/GRASP_RULES.md</code>。</p>
 </section>
+<section class="wrap">
+  <div class="sec-head"><h2>校验与版本</h2></div>
+  <div class="callout">
+    <b>校验：</b>Windows (PowerShell) <code>Get-FileHash .\openhwlab-robot-arm.zip -Algorithm SHA256</code>；macOS / Linux <code>sha256sum openhwlab-robot-arm.zip</code>。与上方 SHA-256 一致即为完整官方包。<br><br>
+    <b>版本记录：</b>2026-10-24 · 首个公开版本（232 文件 / MIT）：控制台 + 3D 真机仿真 + 数据采集/训练分析 + ROS 2 下位机脚本。
+  </div>
+</section>
 </main>
 
 <footer>
@@ -245,7 +251,7 @@
       </div>
       <div>
         <b style="color:#fff">导航</b><br>
-        <a href="projects.html">机顶盒</a> · <a href="robot.html">机器人</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a>
+        <a href="projects.html">机顶盒</a> · <a href="robot.html">机器人</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a>
       </div>
       <div>
         <b style="color:#fff">开源</b><br>

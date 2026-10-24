@@ -21,7 +21,6 @@
       <a href="index.html">首页</a>
       <a href="projects.html" class="on">机顶盒</a>
       <a href="robot.html">机器人</a>
-      <a href="downloads.html">下载</a>
       <a href="docs.html">教程</a>
       <a href="compare.html">对比</a>
       <a href="about.html">关于</a>
@@ -30,9 +29,9 @@
   </div>
 </header>
 
-<section class="wrap" style="padding-top:44px">
+<section class="wrap" style="padding-top:44px" id="downloads">
   <h2>机顶盒项目<span class="n">闲置安卓机顶盒改造</span></h2>
-  <p class="lead">这里汇集 OpenHW Lab 的<b>机顶盒改造项目</b>：每个方案都附安装包与教程，可直接下载。</p>
+  <p class="lead">这里汇集 OpenHW Lab 的<b>机顶盒改造项目</b>：每个方案都附安装包、SHA-256 与教程，<b>下载直接放在对应方案卡片里</b>；机器人源码在 <a href="robot.html">机器人板块</a>。</p>
   <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ 下载须知：本系列安装包需要具备<b>一定的动手能力与专业知识</b>（盒子 root、ADB / 串口、命令行操作）才能安装；<b>纯小白请谨慎下载</b>。安装存在失败 / 变砖风险，请自行评估、后果自负。</p>
 </section>
 
@@ -49,6 +48,7 @@
     <p>把吃灰的<b>魔百和 CM201-1</b>盒子变成网络打印机：手机上网页/扫码打印，支持 IPP 直连。<b>驱动自适应多品牌</b>——插上自动识别型号、从内置驱动库匹配（HP / 兄弟 / 联想 / 爱普生 / 佳能 等），认不出的可传 .ppd；HP LaserJet 1018/1020/1022 更是插上即自动灌固件出纸。</p>
     <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-cm201-1-print-server.zip" download>下载 (.zip · 1224K)</a></div>
+    <details><summary>校验 SHA-256</summary><code>ab160de262c3b062ef64aef9373e48d672821d4e85580974b2385320f22eeedf</code></details>
     </article>
 
     <article class="card">
@@ -58,6 +58,7 @@
     <p>把吃灰的<b>魔百和 CM201-2</b>（海思 Hi3798MV300 / Android 4.4.2）变成网络打印机：网页/扫码打印、IPP 直连。<b>驱动自适应多品牌</b>（HP/兄弟/联想/爱普生/佳能 等），HP LaserJet 1018/1020/1022/1022n 插上即自动灌固件出纸；联想 M7206W 等主机型走 brlaser（本机实测）。开机自动进打印桌面。</p>
     <ul class="tags"><li>网络打印</li><li>自适应多品牌</li><li>即插即用</li><li>IPP 直连</li></ul>
     <div class="dl"><a class="btn ghost" href="dl/openhwlab-cm201-2-print-server.zip" download>精简包 (.zip · 1233K)</a></div>
+    <details><summary>校验 SHA-256</summary><code>225785bda1514d524024b199b4639ad7ad4511458ecb24327c80e9c5cda208b6</code></details>
     </article>
 
     <article class="card">
@@ -67,6 +68,7 @@
     <p>针对<b>魔百和 M301H</b>（<b>创维 CW / 型号 M301H_CW0_AH / 海思 Hi3798MV300</b>）实测：aria2 挂机下载（磁力/BT/直链）+ Samba 家庭网盘 + 网页面板扫码加任务。<b>存储自动切换</b>——插上硬盘/U盘下载自动落到盘，没插用内部存储（vfat/exFAT/NTFS）。</p>
     <ul class="tags"><li>下载</li><li>网盘</li><li>M301H</li><li>存储自动切换</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-m301h-nas-download.zip" download>下载 (.zip · 122K)</a></div>
+    <details><summary>校验 SHA-256</summary><code>43643a0e06c6c6255051f538f086afca5afc424af7edd3217880746031a2a3ff</code></details>
     </article>
 
     <article class="card">
@@ -75,6 +77,7 @@
     <p>针对 <b>魔百盒 HG680-R</b>（<b>MStar / Android 4.4.4</b>）实测：桌面双击开应用 + Firefox 桌面版上网 + 当贝市场/投屏/电视直播 + 局域网互传 + <b>鼠标指针补丁（手→箭头/去白圈）</b> + 开机自启。</p>
     <ul class="tags"><li>桌面</li><li>浏览器</li><li>型号版</li><li>指针补丁</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-hg680r-desktop-pc.zip" download>下载 (.zip · 14M)</a></div>
+    <details><summary>校验 SHA-256</summary><code>a2b27233241ab407f28183d9536cf6715c16e7608d622ae76a8e60667e0ead0a</code></details>
     </article>
   </div>
   <div class="subhead"><h3>通用版 · 适用任意机顶盒</h3><span class="more">适用任意已 root 的安卓机顶盒</span></div>
@@ -85,6 +88,7 @@
     <p>机顶盒 → 家庭 KTV 点歌台：开机直进点歌，<b>本地曲库 + 在线点歌</b>（网易云搜歌/热歌榜/戏曲/儿歌）；歌词卡拉OK进度染色、粒子画面不黑屏、可拖动进度条；遥控器/鼠标/手机扫码都能点歌。</p>
     <ul class="tags"><li>KTV 点歌</li><li>本地+在线</li><li>手机扫码</li><li>U 盘歌曲</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-ktv.zip" download>下载通用安装包（在线版 · 102K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>09ce2c48993f3f9ff5bc0b256cb689962ebfea0047cb3d7b37653d836bfa7750</code></details>
     </article>
 
     <article class="card">
@@ -93,6 +97,7 @@
     <p>机顶盒 → 给小学生用的桌面小电脑：<b>开机直进</b> Win 风格简单桌面（浏览器/文件/设置），<b>设置免密</b>；浏览器默认电脑版百度、不弹软键盘、方向键导航。</p>
     <ul class="tags"><li>少儿电脑</li><li>开机直进</li><li>设置免密</li><li>原生桌面</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-kids-pc.zip" download>下载通用安装包（在线版 · 100K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>d3d8ba2c8f61f84c2600f91f7ec0b53a5352587e384b64a81c6a2afda41d07d3</code></details>
     </article>
 
     <article class="card">
@@ -101,6 +106,7 @@
     <p>开机即玩的家庭游戏主机：8 款原生小游戏（打砖块/俄罗斯方块/2048/贪吃蛇/打地鼠/坦克大战/乒乓球/飞机大战）+ 学科 / 考证 / 教学游戏。1–9 人同屏，手机扫码即可当手柄。</p>
     <ul class="tags"><li>离线</li><li>多人同屏</li><li>手机手柄</li><li>在线更新</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-game-console.zip" download>下载通用安装包（在线版 · 296K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>353323a08889fcfa6c88737293e9d2741f22e2f1a6a32edb281796512b74aa2a</code></details>
     </article>
 
     <article class="card">
@@ -109,6 +115,7 @@
     <p>把盒子变成轻量小主机：原生桌面 + 浏览器 + 中文输入法 + 局域网互传 + 接 U 盘；把存储当内存扩容，开机自愈，日常办公/冲浪够用。</p>
     <ul class="tags"><li>桌面环境</li><li>浏览器</li><li>互传</li><li>扩容</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-desktop-pc.zip" download>下载通用安装包（在线版 · 594K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>fa2cb83e41675505bb188516f6fcd5a25dd4346b5407679ff65ab98a7907438e</code></details>
     </article>
 
     <article class="card">
@@ -117,6 +124,7 @@
     <p>专为「追剧 + 办公」：能看很多视频（浏览器在线看 + 当贝市场装各大视频 App + 投屏 + 电视直播），并内置 WPS Office 办公（新建/编辑/保存 Word/Excel/PPT），桌面双击即用。</p>
     <ul class="tags"><li>看视频</li><li>WPS 办公</li><li>桌面</li><li>互传</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-video-desktop.zip" download>下载通用安装包（在线版 · 588K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>7cd70c93be48ca3d77121af9bd81eb6fad3e59688b85e195c3b669525b717a7b</code></details>
     </article>
 
     <article class="card">
@@ -125,6 +133,7 @@
     <p>插一个 USB 摄像头即成监控：MJPEG 直播 + 30 秒循环录像 + 手机远程看 + 移动侦测 + YOLO 物体识别 + 告警推送；多路摄像头 4 宫格，录像可落内部/SD/U 盘。</p>
     <ul class="tags"><li>循环录像</li><li>远程查看</li><li>AI 识别</li><li>告警推送</li></ul>
     <div class="dl"><a class="btn ghost" href="dl/openhwlab-surveillance.zip" download>下载通用安装包（在线版 · 11M）</a></div>
+    <details><summary>校验 SHA-256</summary><code>269736c83cd1e4ea653d169ec03cfa3de80b0e3bc7f15b76acef526fe3704cf2</code></details>
     </article>
 
     <article class="card">
@@ -133,6 +142,7 @@
     <p>把老旧 USB 打印机变成网络打印机：手机/电脑打开网页即可拖拽打印，支持 AirPrint 与 IPP 直连，自动识别打印机型号并联网装驱动，还能打印二维码贴纸。</p>
     <ul class="tags"><li>网络打印</li><li>AirPrint</li><li>扫码传件</li><li>驱动向导</li></ul>
     <div class="dl"><a class="btn ghost" href="dl/openhwlab-print-server.zip" download>下载通用安装包（在线版 · 392K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>a2228cd2fe8a5780b1b77848b01ddc19dcf9c1d1a7ee1151173187f8ef5842ff</code></details>
     </article>
 
     <article class="card">
@@ -141,6 +151,7 @@
     <p>闲置盒子 + USB 硬盘 = 挂机下载 + 家庭网盘：aria2 下载（磁力/BT/直链）、Samba 网盘、扫码加任务、开机直进管理面板。</p>
     <ul class="tags"><li>下载</li><li>网盘</li><li>离线下载</li><li>扫码</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-nas-download.zip" download>下载通用安装包（在线版 · 348K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>d49080887612ecd9b1a1d4e21799349c9213b5b22ea4315de7ac6b0a61f2cb4b</code></details>
     </article>
 
     <article class="card">
@@ -149,11 +160,34 @@
     <p>闲置盒子 = 局域网 DNS（AdGuard Home）：全家设备自动去广告、防跟踪，一次配置全屋生效。</p>
     <ul class="tags"><li>去广告</li><li>DNS</li><li>旁路由</li><li>防跟踪</li></ul>
     <div class="dl"><a class="btn" href="dl/openhwlab-adblock-dns.zip" download>下载通用安装包（在线版 · 280K）</a></div>
+    <details><summary>校验 SHA-256</summary><code>7afbc5af738ca76da4263725e5270b5739cc84720a2baff61e28a1d4cc885881</code></details>
     </article>
   </div>
   <p class="note">通用前提：盒子<b>已 root</b>、能开 <b>ADB</b>；<b>不刷机</b>，可随时卸载还原。详见 <a href="docs.html">教程</a>。</p>
 </section>
 
+<section class="wrap">
+  <div class="sec-head"><h2>校验下载</h2></div>
+  <div class="callout">
+    Windows (PowerShell)：<code>Get-FileHash .\openhwlab-*.zip -Algorithm SHA256</code><br>
+    macOS / Linux：<code>sha256sum openhwlab-*.zip</code><br>
+    与对应方案卡片里的 <b>SHA-256</b> 对比，一致即为完整、未被篡改的官方包。
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>版本记录</h2></div>
+  <table>
+    <thead><tr><th>日期</th><th>方案</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>2026-10-05</td><td>去广告DNS</td><td>首个公开版本：AdGuard Home DNS(:53) + 管理页(:3000) + TCP 上游 + http 过滤列表</td></tr>
+      <tr><td>2026-10-05</td><td>下载机NAS</td><td>首个公开版本：aria2 下载 + Samba 网盘 + 管理面板（暂停/继续/删除）+ 手机扫码 + 开机直进</td></tr>
+      <tr><td>2026-10-05</td><td>打印机服务器</td><td>首个公开版本：打印门户 + 管理页 + 驱动向导 + 二维码贴纸</td></tr>
+      <tr><td>2026-10-05</td><td>监控录像主机</td><td>更新：多路 4 宫格 / 画面检测 / 告警推送 / 落 SD·U 盘</td></tr>
+      <tr><td>2026-10-03</td><td>游戏机 / 电脑主机</td><td>首个公开版本</td></tr>
+    </tbody>
+  </table>
+</section>
 </main>
 
 <footer>
@@ -164,7 +198,7 @@
         <div>openhwlab.com · 智能硬件开放实验室研发<br>开放、开源、共创、共享</div>
         <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
       </div>
-      <div><b style="color:#fff">导航</b><br><a href="projects.html">机顶盒</a> · <a href="robot.html">机器人</a> · <a href="downloads.html">下载</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a></div>
+      <div><b style="color:#fff">导航</b><br><a href="projects.html">机顶盒</a> · <a href="robot.html">机器人</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a></div>
       <div><b style="color:#fff">开源</b><br>MIT License</div>
     </div>
     <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>

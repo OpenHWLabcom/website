@@ -22,7 +22,6 @@
       <a href="index.html">Home</a>
       <a href="projects.html" class="on">TV Box</a>
       <a href="robot.html">Robot</a>
-      <a href="downloads.html">Downloads</a>
       <a href="docs.html">Docs</a>
       <a href="compare.html">Compare</a>
       <a href="about.html">About</a>
@@ -31,9 +30,9 @@
   </div>
 </header>
 
-<section class="wrap" style="padding-top:44px">
+<section class="wrap" style="padding-top:44px" id="downloads">
   <h2>TV Box Projects<span class="n">repurposing idle Android TV boxes</span></h2>
-  <p class="lead">Every TV-box kit is ready to download — each one bundles an installer plus a step-by-step guide.</p>
+  <p class="lead">OpenHW Lab <b>TV-box projects</b>: every kit bundles an installer, SHA-256 and a step-by-step guide — <b>downloads live on each project card</b>. Robot source is on the <a href="robot.html">Robot</a> page.</p>
   <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ Download notice: these kits require <b>some hands-on / technical skill</b> (box rooting, ADB / serial, command line) to install. <b>Total beginners, please be cautious.</b> Installation may fail or brick the device — proceed at your own risk.</p>
 </section>
 
@@ -50,6 +49,7 @@
     <p>Turn a dusty <b>China Mobile CM201-1</b> TV box into a network printer: print from any phone/PC browser (web or QR), direct IPP. <b>Adapts to many brands</b> — model auto-detected and matched against the built-in driver library (HP / Brother / Lenovo / Epson / Canon …), with .ppd upload as fallback; HP LaserJet 1018/1020/1022 are true plug-and-play (auto firmware + driver).</p>
     <ul class="tags"><li>Network print</li><li>Multi-brand auto</li><li>Plug &amp; play</li><li>IPP</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-cm201-1-print-server.zip" download>Download (.zip · 1224K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>ab160de262c3b062ef64aef9373e48d672821d4e85580974b2385320f22eeedf</code></details>
     </article>
 
     <article class="card">
@@ -59,6 +59,7 @@
     <p>Turn a dusty <b>China Mobile CM201-2</b> (HiSilicon Hi3798MV300 / Android 4.4.2) box into a network printer: web/QR print, direct IPP. <b>Adapts to many brands</b> (HP / Brother / Lenovo / Epson / Canon …); HP LaserJet 1018/1020/1022/1022n are true plug-and-play (auto firmware); Lenovo/Brother host-based via brlaser (tested with Lenovo M7206W). Boots straight into the print desktop.</p>
     <ul class="tags"><li>Network print</li><li>Multi-brand auto</li><li>Plug &amp; play</li><li>IPP</li></ul>
     <div class="dl"><a class="btn ghost" href="../dl/openhwlab-cm201-2-print-server.zip" download>Lite kit (.zip · 1233K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>225785bda1514d524024b199b4639ad7ad4511458ecb24327c80e9c5cda208b6</code></details>
     </article>
 
     <article class="card">
@@ -68,6 +69,7 @@
     <p>For the <b>China Mobile M301H</b> (<b>Skyworth CW / model M301H_CW0_AH / HiSilicon Hi3798MV300</b>): aria2 (magnet/BT/direct) + Samba share + web panel with QR. <b>Auto storage switching</b> — plug in a drive and downloads go there, otherwise internal storage (vfat/exFAT/NTFS).</p>
     <ul class="tags"><li>Download</li><li>NAS</li><li>M301H</li><li>Auto storage</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-m301h-nas-download.zip" download>Download (.zip · 122K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>43643a0e06c6c6255051f538f086afca5afc424af7edd3217880746031a2a3ff</code></details>
     </article>
 
     <article class="card">
@@ -76,6 +78,7 @@
     <p>For the <b>China Mobile HG680-R</b> (<b>MStar / Android 4.4.4</b>): desktop with double-click icons + Firefox desktop-mode + Dangbei apps + LAN transfer + <b>mouse-pointer patch (hand→arrow, no white ring)</b> + autostart.</p>
     <ul class="tags"><li>Desktop</li><li>Browser</li><li>Model build</li><li>Pointer patch</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-hg680r-desktop-pc.zip" download>Download (.zip · 14M)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>a2b27233241ab407f28183d9536cf6715c16e7608d622ae76a8e60667e0ead0a</code></details>
     </article>
   </div>
   <div class="subhead"><h3>Generic kits · for any TV box</h3><span class="more">Works on any rooted Android TV box</span></div>
@@ -86,6 +89,16 @@
     <p>TV box → home karaoke: boots straight into the song-request screen; <b>local library + online search</b> (NetEase Cloud Music); karaoke lyrics with progress coloring, particle visuals (no black screen), draggable progress bar; remote / mouse / phone QR control.</p>
     <ul class="tags"><li>Karaoke</li><li>Local + online</li><li>Phone QR</li><li>USB songs</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-ktv.zip" download>Download generic kit (online · 102K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>09ce2c48993f3f9ff5bc0b256cb689962ebfea0047cb3d7b37653d836bfa7750</code></details>
+    </article>
+
+    <article class="card">
+    <span class="badge">Ready</span><div class="ic">🧒</div>
+    <h3>B860AV → Kids PC</h3>
+    <p>TV box → a simple desktop for primary-school kids: <b>boots straight in</b> to a Windows-style desktop (browser / files / settings), <b>no password for settings</b>; browser opens desktop Baidu, no on-screen keyboard pop-up, arrow-key navigation for remote or keyboard.</p>
+    <ul class="tags"><li>Kids PC</li><li>Boot to desktop</li><li>No password</li><li>Native desktop</li></ul>
+    <div class="dl"><a class="btn" href="../dl/openhwlab-kids-pc.zip" download>Download generic kit (online · 100K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>d3d8ba2c8f61f84c2600f91f7ec0b53a5352587e384b64a81c6a2afda41d07d3</code></details>
     </article>
 
     <article class="card">
@@ -94,6 +107,7 @@
     <p>A home console that boots straight into play: 8 native mini-games (Breakout / Tetris / 2048 / Snake / Whack-a-mole / Tank Battle / Pong / Airplane) plus study, exam and tutorial games. 1–9 players on one screen; scan a QR code to use a phone as a controller.</p>
     <ul class="tags"><li>Offline</li><li>Multiplayer</li><li>Phone gamepad</li><li>OTA update</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-game-console.zip" download>Download generic kit (online · 296K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>353323a08889fcfa6c88737293e9d2741f22e2f1a6a32edb281796512b74aa2a</code></details>
     </article>
 
     <article class="card">
@@ -102,6 +116,7 @@
     <p>Turn the box into a lightweight desktop: native desktop + browser + Chinese IME + LAN file transfer + USB drive support; uses storage as extra memory and self-heals on boot.</p>
     <ul class="tags"><li>Desktop</li><li>Browser</li><li>File transfer</li><li>Swap</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-desktop-pc.zip" download>Download generic kit (online · 594K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>fa2cb83e41675505bb188516f6fcd5a25dd4346b5407679ff65ab98a7907438e</code></details>
     </article>
 
     <article class="card">
@@ -110,6 +125,7 @@
     <p>Built for binge-watching + work: watch lots of video (stream in the browser, install major video apps, cast, live TV) and write documents with the built-in WPS Office (Word / Excel / PPT).</p>
     <ul class="tags"><li>Video</li><li>WPS Office</li><li>Desktop</li><li>File transfer</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-video-desktop.zip" download>Download generic kit (online · 588K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>7cd70c93be48ca3d77121af9bd81eb6fad3e59688b85e195c3b669525b717a7b</code></details>
     </article>
 
     <article class="card">
@@ -118,6 +134,7 @@
     <p>Plug in one USB camera for a full recorder: MJPEG live view + 30-second loop recording + phone remote view + motion detection + YOLO object detection + push alerts. Multi-camera 4-up grid; recordings to internal / SD / USB.</p>
     <ul class="tags"><li>Loop recording</li><li>Remote view</li><li>AI detection</li><li>Push alerts</li></ul>
     <div class="dl"><a class="btn ghost" href="../dl/openhwlab-surveillance.zip" download>Download generic kit (online · 11M)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>269736c83cd1e4ea653d169ec03cfa3de80b0e3bc7f15b76acef526fe3704cf2</code></details>
     </article>
 
     <article class="card">
@@ -126,6 +143,7 @@
     <p>Turn an old USB printer into a network printer: drag-and-drop print from any phone/PC browser, AirPrint and direct IPP, automatic printer-model detection with online driver install, plus printable QR-code sheets.</p>
     <ul class="tags"><li>Network print</li><li>AirPrint</li><li>QR upload</li><li>Driver wizard</li></ul>
     <div class="dl"><a class="btn ghost" href="../dl/openhwlab-print-server.zip" download>Download generic kit (online · 392K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>a2228cd2fe8a5780b1b77848b01ddc19dcf9c1d1a7ee1151173187f8ef5842ff</code></details>
     </article>
 
     <article class="card">
@@ -134,6 +152,7 @@
     <p>Idle box + a USB drive = download box + home NAS: aria2 (magnet/BT/direct), a Samba share, scan-to-add tasks, and it boots straight into the panel.</p>
     <ul class="tags"><li>Download</li><li>NAS</li><li>Offline</li><li>QR</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-nas-download.zip" download>Download generic kit (online · 348K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>d49080887612ecd9b1a1d4e21799349c9213b5b22ea4315de7ac6b0a61f2cb4b</code></details>
     </article>
 
     <article class="card">
@@ -142,11 +161,34 @@
     <p>Idle box = a LAN DNS (AdGuard Home): ad/tracker blocking for every device, configured once for the whole home.</p>
     <ul class="tags"><li>Ad-block</li><li>DNS</li><li>Bypass router</li><li>Privacy</li></ul>
     <div class="dl"><a class="btn" href="../dl/openhwlab-adblock-dns.zip" download>Download generic kit (online · 280K)</a></div>
+    <details><summary>SHA-256 checksum</summary><code>7afbc5af738ca76da4263725e5270b5739cc84720a2baff61e28a1d4cc885881</code></details>
     </article>
   </div>
   <p class="note">Common requirements: a <b>rooted</b> box with <b>ADB</b> enabled; <b>no flashing</b>, fully reversible. See <a href="docs.html">Docs</a>.</p>
 </section>
 
+<section class="wrap">
+  <div class="sec-head"><h2>Verify downloads</h2></div>
+  <div class="callout">
+    Windows (PowerShell): <code>Get-FileHash .\openhwlab-*.zip -Algorithm SHA256</code><br>
+    macOS / Linux: <code>sha256sum openhwlab-*.zip</code><br>
+    Compare with the <b>SHA-256</b> on the matching card — if it matches, the package is intact and unmodified.
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2>Changelog</h2></div>
+  <table>
+    <thead><tr><th>Date</th><th>Kit</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>2026-10-05</td><td>Ad-blocking DNS</td><td>First public release: AdGuard Home DNS(:53) + admin(:3000) + TCP upstream + http filter lists</td></tr>
+      <tr><td>2026-10-05</td><td>Download Box + NAS</td><td>First public release: aria2 + Samba share + panel (pause/resume/delete) + QR + boot-to-panel</td></tr>
+      <tr><td>2026-10-05</td><td>Print Server</td><td>First public release: print portal + admin + driver wizard + QR sheets</td></tr>
+      <tr><td>2026-10-05</td><td>Surveillance NVR</td><td>Update: multi-camera 4-up / scene detection / push alerts / SD·USB storage</td></tr>
+      <tr><td>2026-10-03</td><td>Game Console / Mini PC</td><td>First public release</td></tr>
+    </tbody>
+  </table>
+</section>
 </main>
 
 <footer>
@@ -157,7 +199,7 @@
         <div>openhwlab.com · OpenHW Lab<br>Open · Open-Source · Co-create · Share</div>
         <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ: 1030889574</div>
       </div>
-      <div><b style="color:#fff">Site</b><br><a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">Site</b><br><a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
       <div><b style="color:#fff">Open source</b><br>MIT License</div>
     </div>
     <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>

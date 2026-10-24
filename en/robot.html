@@ -27,7 +27,6 @@
       <a href="index.html">Home</a>
       <a href="projects.html">TV Box</a>
       <a href="robot.html" class="on">Robot</a>
-      <a href="downloads.html">Downloads</a>
       <a href="docs.html">Docs</a>
       <a href="compare.html">Compare</a>
       <a href="about.html">About</a>
@@ -207,7 +206,7 @@
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="downloads">
   <div class="sec-head"><h2>Download &amp; Quick Start<span class="n">MIT · source package</span></h2></div>
   <div class="cards two">
     <article class="card">
@@ -233,6 +232,13 @@
   <p class="note">No robot? You can still open <code>arm3d.html</code> and other pages with a local static server to explore the 3D model and UI.</p>
   <p class="note" style="border-color:#c2410c;background:#2a1c0e;color:#fcd9a8;font-weight:600">⚠️ Safety: the arm is a powerful real machine. Clear the workspace, keep the E-stop in hand, and validate unloaded at slow speed first. Always approach grasps from above. See <code>docs/MOTION_RULES.md</code> and <code>docs/GRASP_RULES.md</code>.</p>
 </section>
+<section class="wrap">
+  <div class="sec-head"><h2>Verify &amp; Version</h2></div>
+  <div class="callout">
+    <b>Verify:</b> Windows (PowerShell) <code>Get-FileHash .\openhwlab-robot-arm.zip -Algorithm SHA256</code>; macOS / Linux <code>sha256sum openhwlab-robot-arm.zip</code>. Matches the SHA-256 above → intact official package.<br><br>
+    <b>Changelog:</b> 2026-10-24 · first public release (232 files / MIT): console + 3D digital twin + data collection/training analysis + ROS 2 lower-board scripts.
+  </div>
+</section>
 </main>
 
 <footer>
@@ -245,7 +251,7 @@
       </div>
       <div>
         <b style="color:#fff">Navigate</b><br>
-        <a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="downloads.html">Downloads</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a>
+        <a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a>
       </div>
       <div>
         <b style="color:#fff">License</b><br>
