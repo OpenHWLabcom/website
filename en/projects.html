@@ -20,10 +20,9 @@
     <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html" class="on">TV Box</a>
       <a href="robot.html">Robot</a>
+      <a href="projects.html" class="on">TV Box</a>
       <a href="docs.html">Docs</a>
-      <a href="compare.html">Compare</a>
       <a href="about.html">About</a>
       <a class="lang" href="../projects.html"><b>中文</b></a>
     </nav>
@@ -167,6 +166,76 @@
   <p class="note">Common requirements: a <b>rooted</b> box with <b>ADB</b> enabled; <b>no flashing</b>, fully reversible. See <a href="docs.html">Docs</a>.</p>
 </section>
 
+<section class="wrap prose" id="compare">
+  <div class="sec-head"><h2>How it compares<span class="n">Our approach vs other systems</span></h2></div>
+<div class="callout">
+    <b>Quick map</b>: the market roughly splits into three —
+    ① <b>Brand NAS devices</b> (Synology DSM / QNAP QTS / lightweight "private cloud" boxes);
+    ② <b>Open-source / DIY NAS OS</b> (OpenMediaVault, TrueNAS, CasaOS, unRAID …);
+    ③ <b>Reflash-style box systems</b> (turn the box into a pure Linux mini-server/router, e.g. Armbian/OpenWrt).
+    We're a <b>fourth path</b>: <b>leave the stock Android untouched, run an Ubuntu chroot "sidecar" + our services</b>.
+  </div>
+
+  <h3>At a glance</h3>
+  <table>
+    <tr><th>Dimension</th><th>OpenHW Lab (ours)</th><th>Brand NAS</th><th>Open-source/DIY NAS OS</th><th>Reflash-style box system</th></tr>
+    <tr><td>Approach</td><td><b>No flash, sidecar</b>: stock Android + Ubuntu chroot</td><td>Purpose-built appliance</td><td>Install a full NAS OS on a PC/board</td><td><b>Replace</b>: flash box to pure Linux</td></tr>
+    <tr><td>Flashing?</td><td><b>No</b> (system/boot untouched)</td><td>No (buy &amp; use)</td><td>Install OS (x86 disk; box needs flashing)</td><td><b>Yes</b> (brick risk)</td></tr>
+    <tr><td>What your PC needs</td><td>Only <b>adb</b> (+ a bash to run scripts)</td><td>Nothing (browser)</td><td>USB installer</td><td>Flasher tool + matching firmware</td></tr>
+    <tr><td>Risk</td><td><b>Low, reversible</b>: delete <code>/data/linux</code> to revert</td><td>Low (but pricey)</td><td>Medium</td><td><b>High</b> (brick on error)</td></tr>
+    <tr><td>Stock features</td><td><b>Kept</b> (IPTV/remote/serial)</td><td>—</td><td>—</td><td><b>Lost</b> (pure Linux)</td></tr>
+    <tr><td>Hardware</td><td>Idle <b>TV box</b> (1GB, USB 2.0, often 1 port)</td><td>Appliance (multi-bay SATA, more RAM)</td><td>PC / board</td><td>Also a box (but reflashed)</td></tr>
+    <tr><td>Storage / RAID</td><td>External USB drive (<b>single disk, no RAID</b>)</td><td><b>Multi-bay RAID/snapshots</b></td><td>RAID/ZFS depending on HW</td><td>Depends on HW</td></tr>
+    <tr><td>Performance</td><td>Modest (old kernel, small CPU, USB 2.0)</td><td>Strong (transcode, multi-user)</td><td>Strong</td><td>Better (kernel replaceable)</td></tr>
+    <tr><td>Cost / power</td><td><b>Nearly free, ultra-low power</b></td><td>Hardware cost</td><td>Hardware cost</td><td>Low</td></tr>
+    <tr><td>Delivery</td><td>One zip (system+deps, offline-ready) + illustrated guide</td><td>A device</td><td>OS image + guide</td><td>Firmware image + flashing guide</td></tr>
+    <tr><td>Best for</td><td>People who want <b>stable, cheap, reversible, stock-preserving</b></td><td>Pro storage &amp; reliability</td><td>PC/board tinkerers</td><td>Players who want a pure server</td></tr>
+  </table>
+
+  <h3>What we can build (roles)</h3>
+  <ul>
+    <li><b>Print server</b>: old USB printer → network printing (IPP + AirPrint + QR print + auto driver).</li>
+    <li><b>Downloader + NAS</b>: aria2 downloads + Samba share + DLNA (drive-first auto storage).</li>
+    <li><b>Surveillance recorder</b>: USB camera live + loop recording + remote + motion alerts.</li>
+    <li><b>Game console / mini PC / ad-block DNS / KTV</b> and more.</li>
+  </ul>
+
+  <h3>What makes ours different</h3>
+  <ul>
+    <li><b>No flash, reversible</b>: stock system fully preserved; remove the chroot to revert.</li>
+    <li><b>Very low barrier</b>: your PC only needs <code>adb</code>; generic projects also ship a <b>full offline package</b> (system+deps bundled, box needs no internet).</li>
+    <li><b>Multi-model</b>: one method fits many boxes (tested on 魔百盒 CM201-1 / CM201-2 / M301H, HiSilicon Hi3798MV300).</li>
+    <li><b>Open source</b>: MIT, source + guides public, fork-friendly.</li>
+  </ul>
+
+  <h3>What we don't do</h3>
+  <ul>
+    <li>Multi-bay <b>RAID / snapshots / redundancy</b> → use a brand NAS or an open NAS OS.</li>
+    <li><b>Real-time media transcoding / many concurrent users</b> → old box CPU can't.</li>
+    <li>Turning the box into a <b>pure Linux host</b> with a custom kernel → that's the "reflash" path.</li>
+    <li>⚠️ <b>Don't store critical data on a box NAS</b> (single disk, no redundancy, old stack).</li>
+  </ul>
+
+  <div class="callout">
+    <b>Bottom line</b>: Brand NAS / open NAS OS = purpose-built for <b>storage</b>;
+    reflash-style box systems = <b>replace</b> (more power &amp; freedom, but flashing, brick risk, stock features lost);
+    ours = <b>add-on</b> (a <b>good-enough lightweight server</b> from an idle box — stable, cheap, reversible, stock kept).
+  </div>
+
+  <h3>FAQ</h3>
+  <div class="faq">
+    <details><summary>Any requirement on my PC's OS?</summary>
+      <p>Barely. <b>Linux / macOS are easiest</b> (just install <code>adb</code>); <b>Windows works too</b> (run scripts in WSL or Git Bash, or follow the guide and type the <code>adb</code> commands). PC architecture (x86/arm64) doesn't matter. The one that matters is the <b>box</b> (Android + its arch, e.g. armv7/armhf).</p>
+    </details>
+    <details><summary>Is this the same as "reflashing a box into a NAS"?</summary>
+      <p>No. Reflashing replaces the box's whole OS (pure Linux); we <b>don't flash</b> — we run a chroot sidecar + our services inside the stock system.</p>
+    </details>
+    <details><summary>Is my data safe?</summary>
+      <p>Box solutions are usually single-disk, no RAID, old kernel — <b>not for critical data</b>. Use a real NAS for reliable storage.</p>
+    </details>
+  </div>
+</section>
+
 <section class="wrap">
   <div class="sec-head"><h2>Verify downloads</h2></div>
   <div class="callout">
@@ -199,7 +268,7 @@
         <div>openhwlab.com · OpenHW Lab<br>Open · Open-Source · Co-create · Share</div>
         <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ: 1030889574</div>
       </div>
-      <div><b style="color:#fff">Site</b><br><a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">Site</b><br><a href="robot.html">Robot</a> · <a href="projects.html">TV Box</a> · <a href="docs.html">Docs</a> · <a href="about.html">About</a></div>
       <div><b style="color:#fff">Open source</b><br>MIT License</div>
     </div>
     <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>

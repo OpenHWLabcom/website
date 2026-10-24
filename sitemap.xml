@@ -37,6 +37,4 @@
   <url><loc>https://www.openhwlab.com/en/robot.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.openhwlab.com/en/docs.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.openhwlab.com/en/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.openhwlab.com/compare.html</loc></url>
-  <url><loc>https://www.openhwlab.com/en/compare.html</loc></url>
 </urlset>

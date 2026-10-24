@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>教程与文档 · OpenHW Lab</title>
-<meta name="description" content="OpenHW Lab 教程：机顶盒改造通用流程、开 ADB、瘦身、扩容、监控/打印等各方案图文教程与常见问题。">
+<title>教程 · 机顶盒与机器人 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 教程：机顶盒改造与机器人开源的入门介绍——原理、通用流程、方案/模块导览、安全规则与常见问题。只讲思路与步骤，不包含下载。">
+<meta name="keywords" content="机顶盒改造教程,机器人教程,6轴机械臂,ROS2,chroot,ADB,开源硬件,openhwlab">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/docs.html">
 <link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/docs.html">
 <link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/docs.html">
 <link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/docs.html">
@@ -19,107 +21,116 @@
     <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
     <nav>
       <a href="index.html">首页</a>
-      <a href="projects.html">机顶盒</a>
       <a href="robot.html">机器人</a>
+      <a href="projects.html">机顶盒</a>
       <a href="docs.html" class="on">教程</a>
-      <a href="compare.html">对比</a>
       <a href="about.html">关于</a>
       <a class="lang" href="en/docs.html">EN</a>
     </nav>
   </div>
 </header>
 
-<section class="wrap" style="padding-top:44px">
-  <h2>教程与文档</h2>
-  <p class="lead">每个方案的安装包里都带一份图文 <code>安装教程.pdf</code>。下面先给出「通用流程」，再列出各方案的教程与开发者文档。</p>
+<section class="hero" style="padding:56px 0 30px">
+  <div class="wrap">
+    <h1>教程<span class="hl">与介绍</span></h1>
+    <p class="tag">机顶盒改造 · 机器人开源</p>
+    <p class="sub">两套开源项目的入门读物：讲清楚<b>原理、流程、模块与安全边界</b>。<br>本页只做介绍，<b>不包含下载</b>；安装包与源码在对应项目页。</p>
+    <div class="cta">
+      <a class="btn ghost" href="#tvbox">机顶盒教程</a>
+      <a class="btn ghost" href="#robot">机器人教程</a>
+    </div>
+  </div>
 </section>
 
 <main>
-<section class="wrap">
-  <div class="sec-head"><h2>通用流程<span class="n">任何方案都先做这几步</span></h2></div>
+<section class="wrap" id="tvbox">
+  <div class="sec-head"><h2>机顶盒改造教程<span class="n">不刷机 · 旁路加装 · 可逆</span></h2></div>
+  <p class="lead">核心思路是<b>不换掉原厂 Android</b>，而是在 <code>/data</code> 里放一个 Ubuntu 子系统（chroot），让服务跑在子系统里；原厂 IPTV、遥控、串口都保留。不想要时删掉子系统即可还原。</p>
+
+  <h3>通用流程</h3>
   <ol class="steps">
-    <li><b>确认机型</b>：你的安卓机顶盒（Android 4.4+，armv7/arm64），且<b>已 root</b>。</li>
-    <li><b>开启 ADB</b>：在盒子「开发者选项」里打开 USB/网络调试；电脑装好 <code>adb</code>。</li>
-    <li><b>连通盒子</b>：<code>adb connect &lt;盒子IP&gt;:5555</code>（或用 USB 线）。</li>
-    <li><b>下载并解压</b>对应方案的 <code>.zip</code>。</li>
-    <li><b>运行一键安装</b>：进入 <code>安装文件/</code>，执行 <code>./一键安装.sh &lt;盒子IP&gt;</code>；或照 <code>安装教程.pdf</code> 手动装。</li>
-    <li><b>重启验证</b>：按教程把方案设为「开机启动 / 桌面」，重启后自动进入。</li>
+    <li><b>确认机型</b>：安卓机顶盒（Android 4.4+，armv7 / arm64），并且<b>已 root</b>。</li>
+    <li><b>开启 ADB</b>：盒子「开发者选项」里打开网络调试（5555）；电脑装好 <code>adb</code>。</li>
+    <li><b>连通盒子</b>：<code>adb connect &lt;盒子IP&gt;:5555</code>，确认 <code>adb devices</code> 能看到设备。</li>
+    <li><b>看方案页的安装说明</b>：在「机顶盒」项目页找到对应方案，按其教程操作（一键脚本或手动步骤）。</li>
+    <li><b>设置开机入口</b>：把方案设为桌面 / 开机自启，重启后自动进入。</li>
+    <li><b>验证与还原</b>：确认功能正常；需要还原时卸载应用、重新启用被禁用的系统应用、删除子系统目录。</li>
   </ol>
-  <div class="callout">
-    ⚠️ <b>安全提示</b>：本项目<b>不刷机、不改系统分区</b>。所有改动都在应用层与 <code>/data</code> 内，卸载 apk、重新启用被禁用的系统应用即可还原。
+  <div class="callout">⚠️ <b>风险边界</b>：本系列<b>不刷机、不改系统分区</b>，改动集中在应用层与 <code>/data</code>。但盒子存储小、内存少，装之前先确认剩余空间；重要数据不要只放在盒子里。</div>
+
+  <h3>方案导览</h3>
+  <div class="cards">
+    <article class="card"><div class="ic">🖨️</div><h3>打印机服务器</h3><p>把老 USB 打印机接上盒子，变成局域网网络打印机：网页/扫码传文件、IPP、AirPrint；按型号自动匹配驱动。</p><ul class="tags"><li>CUPS</li><li>IPP</li><li>扫码打印</li></ul></article>
+    <article class="card"><div class="ic">⬇️</div><h3>下载机 + NAS</h3><p>aria2 挂机下载（磁力/BT/直链）+ Samba 家庭网盘；插 U 盘/硬盘优先存外置，没插就落内部存储。</p><ul class="tags"><li>aria2</li><li>Samba</li><li>热插拔</li></ul></article>
+    <article class="card"><div class="ic">📹</div><h3>监控录像主机</h3><p>USB 摄像头直播 + 30 秒循环录像 + 手机远程看；可加移动侦测、物体识别与告警推送。</p><ul class="tags"><li>MJPEG</li><li>循环录像</li><li>告警</li></ul></article>
+    <article class="card"><div class="ic">🎮</div><h3>家庭游戏机</h3><p>开机即玩的 8 款原生小游戏 + 学科/考证/教学；1–9 人同屏，手机扫码当手柄。</p><ul class="tags"><li>离线</li><li>多人</li><li>手机手柄</li></ul></article>
+    <article class="card"><div class="ic">🖥️</div><h3>桌面小电脑</h3><p>原生桌面 + Firefox 桌面版 + 中文输入法 + 局域网互传 + U 盘；适合上网、看视频、轻办公。</p><ul class="tags"><li>桌面</li><li>浏览器</li><li>互传</li></ul></article>
+    <article class="card"><div class="ic">🎤</div><h3>KTV 点歌台</h3><p>开机直进点歌大屏；本地/U 盘曲库 + 在线点歌；歌词进度染色，遥控器/鼠标/手机都能点。</p><ul class="tags"><li>本地+在线</li><li>卡拉OK</li><li>扫码</li></ul></article>
+    <article class="card"><div class="ic">🛡️</div><h3>去广告 DNS 盒子</h3><p>盒子当局域网 DNS（AdGuard Home）：全家设备去广告、防跟踪，一次配置全屋生效。</p><ul class="tags"><li>DNS</li><li>去广告</li><li>旁路由</li></ul></article>
+    <article class="card"><div class="ic">🧒</div><h3>少儿电脑</h3><p>给小学生用的简单桌面：浏览器/文件/设置，设置免密；默认电脑版网页，不弹软键盘。</p><ul class="tags"><li>少儿</li><li>免密</li><li>简单桌面</li></ul></article>
+  </div>
+
+  <h3>关键概念</h3>
+  <div class="faq">
+    <details open><summary>chroot 和刷机有什么区别？</summary><p>刷机是<b>换掉整个系统</b>（有变砖风险、丢失原厂功能）；chroot 是在原厂系统里<b>旁路跑一个 Ubuntu 子系统</b>，原厂系统不动，删掉子目录即可还原。</p></details>
+    <details><summary>为什么总说 /data 很紧张？</summary><p>老盒子的 <code>/data</code> 常常只有 1 GB 左右，装子系统和大应用会满；<code>/sdcard</code> 是独立分区，通常更大。必要时把缓存/数据目录软链到 <code>/sdcard</code>，或用 U 盘扩展。</p></details>
+    <details><summary>开机自启是怎么做的？</summary><p>常见做法是装一个桌面/前台 App 作为 HOME，或在系统启动脚本里拉起服务。不同机型入口不同，方案页会写具体做法。</p></details>
+    <details><summary>装坏了怎么还原？</summary><p>先卸载安装的 apk / 服务，重新启用被 <code>pm disable</code> 的系统应用；再删除子系统目录与自启脚本。因为不动 boot / 系统分区，一般不需要刷机。</p></details>
   </div>
 </section>
 
-<section class="wrap">
-  <div class="sec-head"><h2>各方案教程</h2></div>
-  <div class="cards two">
-    <article class="card">
-      <div class="ic">🎤</div><h3>家庭影院 KTV 点歌台（B860AV）</h3>
-      <p>装 App 当桌面 · 本地/U 盘曲库(含电影) · 在线点歌(网易云) · 卡拉OK 歌词 · 遥控器/鼠标/手机扫码点歌。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🎮</div><h3>游戏机</h3>
-      <p>安装 · 设为开机桌面 · 手机扫码当手柄 · 在线更新。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖥️</div><h3>电脑主机</h3>
-      <p>开 ADB · 瘦身 · 内存扩容 · 搭 Linux 子系统 · 装桌面 · 互传/U 盘 · 输入法。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖥️</div><h3>魔百盒 HG680-R 改桌面小电脑</h3>
-      <p>HG680-R（MStar/Android4.4.4）实测 · 桌面双击开应用 · Firefox 桌面版 · 当贝市场/投屏/直播 · 互传 · 鼠标指针补丁 · 开机自启。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">📹</div><h3>监控录像主机</h3>
-      <p>USB 摄像头接入 · 循环录像 · 远程查看 · 移动侦测 · 物体识别 · 告警推送。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>打印机服务器</h3>
-      <p>装 CUPS · 识别打印机型号 · 联网装驱动 · 手机扫码传件打印 · 二维码贴纸。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>魔百和 CM201-1 改打印机服务器</h3>
-      <p>装 CUPS · HP 1018/1020/1022 插上即自动装驱动出纸 · 手机扫码传件打印 · IPP 直连 · 二维码贴纸。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>魔百和 CM201-2 改打印机服务器</h3>
-      <p>装 CUPS · HP 1018/1020/1022/1022n 插上即自动装驱动出纸 · 联想/兄弟主机型走 brlaser · 手机扫码传件打印 · IPP 直连 · 开机即进打印桌面。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">💾</div><h3>下载机 · NAS</h3>
-      <p>aria2 下载 · 网页/AriaNg 管理 · Samba 局域网网盘 · 手机扫码加任务 · 开机自启。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">💾</div><h3>魔百和 M301H 改下载机NAS</h3>
-      <p>魔百和 M301H（<b>创维 / 海思 Hi3798MV300</b>）实测 · aria2 下载 · Samba 网盘 · 网页面板扫码 · <b>存储自动切换（插盘优先）</b> · 开机自启。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🛡️</div><h3>去广告 DNS 盒子</h3>
-      <p>AdGuard Home：全屋 DNS 去广告 · 防跟踪 · TCP 上游 · http 过滤列表 · 手机看拦截统计。</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">下载安装包（内含教程）</a></div>
-    </article>
-  </div>
-</section>
+<section class="wrap" id="robot">
+  <div class="sec-head"><h2>机器人开源教程<span class="n">6 轴机械臂 · 从控制到训练</span></h2></div>
+  <p class="lead">一条完整的控制与数据链路：<b>Jetson 上位机 → adb → chroot → ssh → ROS 2 下位机</b>，上面跑 3D 真机仿真、控制台、视觉/语音、抓取、数据采集与训练分析。教程只讲原理与步骤，源码在「机器人」项目页。</p>
 
-<section class="wrap">
-  <div class="sec-head"><h2>开发者文档</h2></div>
+  <h3>系统架构</h3>
+  <div class="cards">
+    <article class="card"><div class="ic">🖥️</div><h3>上位机（Jetson）</h3><p>跑控制台与 3D 页面（:8790）、关节桥（:8796）、模式服务（:8795）、双路相机流（:8799/:8800）。</p><ul class="tags"><li>Web 控制台</li><li>关节桥</li><li>相机流</li></ul></article>
+    <article class="card"><div class="ic">🔗</div><h3>机器人链路</h3><p>adb 连机器人上位板（5555）→ chroot 到 Ubuntu → ssh 到下位机 → ROS 2 话题。关节轨迹与流式 jog 都走这条链路。</p><ul class="tags"><li>adb</li><li>chroot</li><li>ssh</li></ul></article>
+    <article class="card"><div class="ic">🦾</div><h3>下位机（ROS 2）</h3><p>发布 <code>/joint_states</code>，订阅 <code>/arm_controller/joint_trajectory</code>；升降、夹爪、头部各有控制脚本。</p><ul class="tags"><li>ROS 2</li><li>轨迹</li><li>jog</li></ul></article>
+    <article class="card"><div class="ic">👁️</div><h3>视觉与数据</h3><p>头部 + 腕部相机推流；采集 episode、标注目标、记录限位点，最后进训练数据综合分析台。</p><ul class="tags"><li>双相机</li><li>采集</li><li>训练</li></ul></article>
+  </div>
+
+  <h3>快速开始（步骤）</h3>
+  <ol class="steps">
+    <li><b>准备环境</b>：上位机 Linux + Python 3；下位机 ROS 2 Humble；机器人 adb 5555 可连。</li>
+    <li><b>改配置</b>：在 <code>serve.sh</code> 里按实际路径修改目录、<code>ADB</code>、<code>ROBOT_HOST</code>、<code>ROBOT_PW</code>、<code>LOWER_IP</code>。</li>
+    <li><b>起服务</b>：<code>bash serve.sh</code>，打开 <code>http://&lt;jetson-ip&gt;:8790/robot_home.html</code>。</li>
+    <li><b>起下位机</b>：把 <code>lower/jogd</code> 放到下位机，启动 <code>jtstream.py</code>；确认关节桥 <code>/joints</code> 有数据。</li>
+    <li><b>先空载验证</b>：慢速模式，小幅度动一下关节、升降、夹爪，确认方向与限位都对。</li>
+    <li><b>再进流程</b>：3D 示教 / 抓取 / 采集 / 训练分析 / 测试计划，按需使用。</li>
+  </ol>
+
+  <h3>模块导览（13 个）</h3>
   <div class="grid-list">
-    <li><b>系统改造手册</b><br><span class="note" style="margin:0">从零梳理盒子的分区、root、ADB、子系统与自启链路。</span></li>
-    <li><b>从源码构建</b><br><span class="note" style="margin:0">各 App 与服务的编译、打包步骤。</span></li>
-    <li><b>关键坑与经验</b><br><span class="note" style="margin:0">踩过的坑与解决办法（USB 口、PATH、认证、缓存…）。</span></li>
-    <li><b>常见问题</b><br><span class="note" style="margin:0">FAQ：不出画面、装不上、DNS 假警报等。</span></li>
+    <li><b>控制 · 主控制台</b><br><span class="note" style="margin:0">实时看板、关节执行、升降与夹爪。</span></li>
+    <li><b>控制 · 3D 机械臂</b><br><span class="note" style="margin:0">真机网格、拖拽示教、定点头、限位保护。</span></li>
+    <li><b>控制 · 夹爪控制</b><br><span class="note" style="margin:0">开度滑杆、合爪/张爪、实时反馈。</span></li>
+    <li><b>控制 · 语音控制</b><br><span class="note" style="margin:0">语音指令、TTS 播报、麦克风状态。</span></li>
+    <li><b>控制 · 指挥系统</b><br><span class="note" style="margin:0">任务指令入口与状态回传。</span></li>
+    <li><b>数据与训练 · 综合分析台</b><br><span class="note" style="margin:0">质量指标、Δp99、回放、HDF5。</span></li>
+    <li><b>数据与训练 · 定点头采集</b><br><span class="note" style="margin:0">真机/仿真、双相机、episode 标记。</span></li>
+    <li><b>数据与训练 · 限位数据库</b><br><span class="note" style="margin:0">临界角点位、方向覆盖、CSV 导出。</span></li>
+    <li><b>数据与训练 · 标注训练</b><br><span class="note" style="margin:0">抓取物 / 存放位置标注。</span></li>
+    <li><b>测试与验收 · 测试计划</b><br><span class="note" style="margin:0">运动/标定/感知/数据/可靠性清单。</span></li>
+    <li><b>工具 · 舞蹈编辑器</b><br><span class="note" style="margin:0">关键帧编排、3D 预览、真机播放。</span></li>
+    <li><b>工具 · 头部相机</b><br><span class="note" style="margin:0">percd 实时 MJPEG（:8799）。</span></li>
+    <li><b>工具 · 爪子相机</b><br><span class="note" style="margin:0">percg 实时 MJPEG（:8800）。</span></li>
   </div>
-  <p class="note">这些文档都在对应安装包的 <code>开发者资料/</code> 目录内，后续也会逐步搬到站上在线阅读。</p>
+
+  <h3>关键概念与安全边界</h3>
+  <div class="faq">
+    <details open><summary>真机模式 / 本地模式</summary><p>默认是真机模式；机器人连续掉线约 10 秒会自动切到本地模式（页面照常可看）。本地模式下探测到 adb 5555 重新可连并稳定几秒，会自动切回真机；<b>手动</b>切的本地模式不会自动回切。</p></details>
+    <details><summary>为什么要先“侧摆 A”？</summary><p>大臂靠近立柱时直接前伸/大角度展开可能撞柱。安全做法是先把大臂摆到离柱更远的侧摆位，确认间隙，再走目标姿态；路径安全时系统会跳过这一步。</p></details>
+    <details><summary>定点头是什么？</summary><p>让机械臂绕<b>固定的爪尖点</b>改变姿态，爪尖位置不变；同时限制工具轴与起始方向的夹角，避免夹爪上的相机翻转。常用于从不同角度看同一个目标。</p></details>
+    <details><summary>抓取为什么要从上往下？</summary><p>先从侧面或下方接近容易撞桌沿、把物体推走，也不利于相机定位。规则是：先把立柱升到桌面以上，夹爪到预抓取位（≥ 桌面 + 12 cm），再从上往下接近；指尖离桌面至少 1 cm。</p></details>
+    <details><summary>数据闭环怎么走？</summary><p>定点头采集 episode → 标注抓取物/存放位置 → 记录爪头限位点 → 在综合分析台看质量指标与回放 → 训练 → 用测试计划做验收。每一步都有对应页面与数据格式。</p></details>
+    <details><summary>3D 页面打不开 / 全黑？</summary><p>3D 页面需要 WebGL。没有硬件 GL 的环境（部分 Chromium / 远程桌面）请换 Firefox，或给浏览器加软件渲染参数；Jetson 桌面建议直接用 Firefox。</p></details>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="callout">安装包与源码不在这里：机顶盒方案见 <a href="projects.html">机顶盒项目页</a>，机器人源码见 <a href="robot.html">机器人项目页</a>。教程只负责把原理和步骤讲清楚，下载与校验放在各自项目页。</div>
 </section>
 </main>
 
@@ -131,10 +142,10 @@
         <div>openhwlab.com · 智能硬件开放实验室研发<br>开放、开源、共创、共享</div>
         <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
       </div>
-      <div><b style="color:#fff">导航</b><br><a href="projects.html">机顶盒</a> · <a href="robot.html">机器人</a> · <a href="docs.html">教程</a> · <a href="compare.html">对比</a> · <a href="about.html">关于</a></div>
+      <div><b style="color:#fff">导航</b><br><a href="robot.html">机器人</a> · <a href="projects.html">机顶盒</a> · <a href="docs.html">教程</a> · <a href="about.html">关于</a></div>
       <div><b style="color:#fff">开源</b><br>MIT License</div>
     </div>
-    <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>
+    <p class="disc">仅供学习与研究。改造与机器人运动有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>
   </div>
 </footer>
 </body>

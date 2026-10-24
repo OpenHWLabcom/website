@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Guides &amp; Docs · OpenHW Lab</title>
-<meta name="description" content="OpenHW Lab guides: general workflow, enabling ADB, slimming, swap expansion, and per-kit illustrated guides plus FAQ.">
+<title>Docs · TV Box &amp; Robot · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab tutorials: introductions to TV-box repurposing and robot open source — principles, workflow, module tours, safety rules and FAQ. No downloads here.">
+<meta name="keywords" content="TV box tutorial,robot tutorial,6-axis arm,ROS2,chroot,ADB,open hardware,openhwlab">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="../assets/logo.svg">
 <link rel="canonical" href="https://www.openhwlab.com/en/docs.html">
@@ -20,107 +21,116 @@
     <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab</span></a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html">TV Box</a>
       <a href="robot.html">Robot</a>
+      <a href="projects.html">TV Box</a>
       <a href="docs.html" class="on">Docs</a>
-      <a href="compare.html">Compare</a>
       <a href="about.html">About</a>
       <a class="lang" href="../docs.html"><b>中文</b></a>
     </nav>
   </div>
 </header>
 
-<section class="wrap" style="padding-top:44px">
-  <h2>Guides &amp; Docs</h2>
-  <p class="lead">Every kit ships an illustrated <code>Install-Guide.pdf</code>. Below is the general workflow, then per-kit guides and developer docs.</p>
+<section class="hero" style="padding:56px 0 30px">
+  <div class="wrap">
+    <h1>Docs &amp; <span class="hl">Introductions</span></h1>
+    <p class="tag">TV-box repurposing · robot open source</p>
+    <p class="sub">Getting-started reading for both projects: <b>principles, workflow, modules and safety limits</b>.<br>This page is an introduction only — <b>no downloads</b>; packages and source live on the project pages.</p>
+    <div class="cta">
+      <a class="btn ghost" href="#tvbox">TV-box docs</a>
+      <a class="btn ghost" href="#robot">Robot docs</a>
+    </div>
+  </div>
 </section>
 
 <main>
-<section class="wrap">
-  <div class="sec-head"><h2>General workflow<span class="n">Do this first, for any kit</span></h2></div>
+<section class="wrap" id="tvbox">
+  <div class="sec-head"><h2>TV-Box Tutorial<span class="n">no flashing · side-load · reversible</span></h2></div>
+  <p class="lead">The idea is <b>not to replace Android</b>. We keep the stock system and run an Ubuntu subsystem (chroot) under <code>/data</code>; services live inside it, while IPTV, remote and serial functions stay intact. Delete the subsystem to revert.</p>
+
+  <h3>General workflow</h3>
   <ol class="steps">
-    <li><b>Check your model</b>: an Android TV box (Android 4.4+, armv7/arm64) that is <b>rooted</b>.</li>
-    <li><b>Enable ADB</b>: turn on USB/network debugging in Developer Options; install <code>adb</code> on your PC.</li>
-    <li><b>Connect</b>: <code>adb connect &lt;box-ip&gt;:5555</code> (or use a USB cable).</li>
-    <li><b>Download &amp; unzip</b> the kit you want.</li>
-    <li><b>Run one-click install</b>: in <code>install/</code>, run <code>./one-click-install.sh &lt;box-ip&gt;</code>; or follow <code>Install-Guide.pdf</code> manually.</li>
-    <li><b>Reboot &amp; verify</b>: set the app as boot launcher per the guide; it should start automatically.</li>
+    <li><b>Check the model</b>: an Android TV box (Android 4.4+, armv7 / arm64) that is <b>rooted</b>.</li>
+    <li><b>Enable ADB</b>: turn on network debugging (5555) in developer options; install <code>adb</code> on your computer.</li>
+    <li><b>Connect</b>: <code>adb connect &lt;box-ip&gt;:5555</code>, confirm with <code>adb devices</code>.</li>
+    <li><b>Follow the kit guide</b>: open the matching card on the TV Box page and follow its tutorial (one-click script or manual steps).</li>
+    <li><b>Set the boot entry</b>: make the kit the launcher / autostart so it comes up after reboot.</li>
+    <li><b>Verify and revert</b>: check the features; to revert, uninstall the app, re-enable disabled system apps and remove the subsystem directory.</li>
   </ol>
-  <div class="callout">
-    ⚠️ <b>Safety</b>: we do <b>not</b> flash firmware or touch system partitions. All changes live at the app layer and under <code>/data</code> — uninstall the apk / re-enable disabled system apps to revert.
+  <div class="callout">⚠️ <b>Risk boundary</b>: we <b>do not flash</b> or touch system partitions — changes stay in the app layer and <code>/data</code>. Boxes have little storage and RAM; check free space first, and do not keep the only copy of important data on the box.</div>
+
+  <h3>Kit tour</h3>
+  <div class="cards">
+    <article class="card"><div class="ic">🖨️</div><h3>Print server</h3><p>Turn an old USB printer into a network printer: web/QR upload, IPP, AirPrint; driver matched by model.</p><ul class="tags"><li>CUPS</li><li>IPP</li><li>QR print</li></ul></article>
+    <article class="card"><div class="ic">⬇️</div><h3>Download box + NAS</h3><p>aria2 downloads (magnet/BT/direct) + Samba share; external USB disk preferred, internal storage as fallback.</p><ul class="tags"><li>aria2</li><li>Samba</li><li>Hot-plug</li></ul></article>
+    <article class="card"><div class="ic">📹</div><h3>Surveillance NVR</h3><p>USB camera live view + 30-second loop recording + remote viewing; optional motion detection, object detection and alerts.</p><ul class="tags"><li>MJPEG</li><li>Loop record</li><li>Alerts</li></ul></article>
+    <article class="card"><div class="ic">🎮</div><h3>Game console</h3><p>8 native mini-games plus study/exam/tutorial modes; 1–9 players on one screen, phone as a gamepad.</p><ul class="tags"><li>Offline</li><li>Multiplayer</li><li>Phone pad</li></ul></article>
+    <article class="card"><div class="ic">🖥️</div><h3>Mini desktop</h3><p>Native desktop + Firefox + Chinese input + LAN transfer + USB storage; enough for browsing, video and light office work.</p><ul class="tags"><li>Desktop</li><li>Browser</li><li>Transfer</li></ul></article>
+    <article class="card"><div class="ic">🎤</div><h3>KTV machine</h3><p>Boots into the song-request screen; local/USB library + online search; karaoke lyrics; remote, mouse or phone control.</p><ul class="tags"><li>Local+online</li><li>Karaoke</li><li>QR</li></ul></article>
+    <article class="card"><div class="ic">🛡️</div><h3>Ad-block DNS</h3><p>Box as a LAN DNS (AdGuard Home): block ads and trackers for every device with one setup.</p><ul class="tags"><li>DNS</li><li>Ad-block</li><li>Side-router</li></ul></article>
+    <article class="card"><div class="ic">🧒</div><h3>Kids PC</h3><p>A simple desktop for primary-school kids: browser/files/settings, no password for settings, desktop web pages, no on-screen keyboard pop-up.</p><ul class="tags"><li>Kids</li><li>No password</li><li>Simple</li></ul></article>
+  </div>
+
+  <h3>Key concepts</h3>
+  <div class="faq">
+    <details open><summary>chroot vs flashing</summary><p>Flashing <b>replaces the whole system</b> (brick risk, loses stock features). chroot runs an <b>Ubuntu subsystem beside</b> the stock system; the stock system is untouched and you can delete the directory to revert.</p></details>
+    <details><summary>Why is /data always tight?</summary><p>Old boxes often have ~1 GB for <code>/data</code>, which fills up with a subsystem and big apps. <code>/sdcard</code> is a separate, usually larger partition; symlink caches/data there or add a USB disk.</p></details>
+    <details><summary>How does autostart work?</summary><p>A launcher/foreground app as HOME, or a service started from a boot script. The exact entry differs per model; see the kit page.</p></details>
+    <details><summary>How to revert?</summary><p>Uninstall the app/service, re-enable apps disabled with <code>pm disable</code>, then remove the subsystem and autostart script. Since boot/system partitions are untouched, no reflash is needed.</p></details>
   </div>
 </section>
 
-<section class="wrap">
-  <div class="sec-head"><h2>Per-kit guides</h2></div>
-  <div class="cards two">
-    <article class="card">
-      <div class="ic">🎤</div><h3>Home Karaoke (B860AV)</h3>
-      <p>Install the app as launcher · local / USB library (incl. movies) · online search (NetEase) · karaoke lyrics · remote / mouse / phone QR.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🎮</div><h3>Game Console</h3>
-      <p>Install · set as launcher · phone-as-controller · OTA update.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖥️</div><h3>Mini PC</h3>
-      <p>Enable ADB · slim down · expand swap · set up Linux subsystem · install desktop · file transfer/USB · IME.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖥️</div><h3>China Mobile HG680-R → Mini PC</h3>
-      <p>Tested on HG680-R (MStar/Android 4.4.4) · desktop double-click · Firefox desktop-mode · Dangbei apps · LAN transfer · mouse-pointer patch · autostart.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">📹</div><h3>Surveillance NVR</h3>
-      <p>USB camera setup · loop recording · remote view · motion detection · object detection · push alerts.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>Print Server</h3>
-      <p>Install CUPS · detect printer model · online driver install · phone QR print · QR sheets.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>China Mobile CM201-1 → Print Server</h3>
-      <p>Install CUPS · plug-and-play HP 1018/1020/1022 (auto driver + firmware) · phone QR print · direct IPP · QR sheets.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🖨️</div><h3>China Mobile CM201-2 → Print Server</h3>
-      <p>Install CUPS · plug-and-play HP 1018/1020/1022/1022n (auto driver + firmware) · Lenovo/Brother host-based via brlaser · phone QR print · direct IPP · boots into the print desktop.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">💾</div><h3>Downloader · NAS</h3>
-      <p>aria2 downloads · web/AriaNg control · Samba LAN share · phone QR to add tasks · autostart.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">💾</div><h3>China Mobile M301H → Download Box + NAS</h3>
-      <p>Tested on <b>China Mobile M301H</b> (Skyworth / HiSilicon Hi3798MV300) · aria2 · Samba share · web panel + QR · <b>auto storage switching (drive-first)</b> · autostart.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-    <article class="card">
-      <div class="ic">🛡️</div><h3>Ad-block DNS</h3>
-      <p>AdGuard Home: whole-home DNS ad-blocking · anti-tracking · TCP upstream · http filter lists · phone stats.</p>
-      <div class="dl"><a class="btn" href="projects.html#downloads">Download kit (guide included)</a></div>
-    </article>
-  </div>
-</section>
+<section class="wrap" id="robot">
+  <div class="sec-head"><h2>Robot Tutorial<span class="n">6-axis arm · control to training</span></h2></div>
+  <p class="lead">A complete control and data path: <b>Jetson host → adb → chroot → ssh → ROS 2 lower board</b>, running a 3D digital twin, console, vision/voice, grasping, data collection and training analysis. This tutorial covers principles and steps; source lives on the Robot page.</p>
 
-<section class="wrap">
-  <div class="sec-head"><h2>Developer docs</h2></div>
+  <h3>Architecture</h3>
+  <div class="cards">
+    <article class="card"><div class="ic">🖥️</div><h3>Host (Jetson)</h3><p>Console and 3D pages (:8790), joint bridge (:8796), mode service (:8795), two camera streams (:8799/:8800).</p><ul class="tags"><li>Web console</li><li>Joint bridge</li><li>Cameras</li></ul></article>
+    <article class="card"><div class="ic">🔗</div><h3>Robot link</h3><p>adb to the robot upper board (5555) → chroot Ubuntu → ssh to the lower board → ROS 2 topics. Trajectories and streaming jog use this path.</p><ul class="tags"><li>adb</li><li>chroot</li><li>ssh</li></ul></article>
+    <article class="card"><div class="ic">🦾</div><h3>Lower board (ROS 2)</h3><p>Publishes <code>/joint_states</code>, subscribes to <code>/arm_controller/joint_trajectory</code>; lift, gripper and head have their own scripts.</p><ul class="tags"><li>ROS 2</li><li>Trajectory</li><li>Jog</li></ul></article>
+    <article class="card"><div class="ic">👁️</div><h3>Vision &amp; data</h3><p>Head + wrist camera streams; collect episodes, annotate targets, record limit points, then analyse in the training dashboard.</p><ul class="tags"><li>Dual camera</li><li>Collect</li><li>Train</li></ul></article>
+  </div>
+
+  <h3>Quick start (steps)</h3>
+  <ol class="steps">
+    <li><b>Prepare</b>: host Linux + Python 3; lower board ROS 2 Humble; robot adb 5555 reachable.</li>
+    <li><b>Edit config</b>: in <code>serve.sh</code> set the directory, <code>ADB</code>, <code>ROBOT_HOST</code>, <code>ROBOT_PW</code> and <code>LOWER_IP</code>.</li>
+    <li><b>Start services</b>: <code>bash serve.sh</code>, open <code>http://&lt;jetson-ip&gt;:8790/robot_home.html</code>.</li>
+    <li><b>Start lower board</b>: copy <code>lower/jogd</code> there and run <code>jtstream.py</code>; confirm <code>/joints</code> has data.</li>
+    <li><b>Validate unloaded</b>: slow mode, small joint/lift/gripper moves; check directions and limits.</li>
+    <li><b>Then use the flows</b>: 3D teaching / grasping / collection / analysis / test plan as needed.</li>
+  </ol>
+
+  <h3>Module tour (13)</h3>
   <div class="grid-list">
-    <li><b>System Handbook</b><br><span class="note" style="margin:0">Partitions, root, ADB, the Linux subsystem and autostart from scratch.</span></li>
-    <li><b>Building from Source</b><br><span class="note" style="margin:0">Compile and package each app and service.</span></li>
-    <li><b>Pitfalls &amp; Lessons</b><br><span class="note" style="margin:0">Every trap we hit and how we fixed it (USB ports, PATH, auth, cache…).</span></li>
-    <li><b>FAQ</b><br><span class="note" style="margin:0">No picture, install fails, DNS false alarms, and more.</span></li>
+    <li><b>Control · Main console</b><br><span class="note" style="margin:0">Dashboard, joint execution, lift and gripper.</span></li>
+    <li><b>Control · 3D arm</b><br><span class="note" style="margin:0">Real meshes, drag teaching, head-fix, limit guard.</span></li>
+    <li><b>Control · Gripper</b><br><span class="note" style="margin:0">Opening slider, close/open, live feedback.</span></li>
+    <li><b>Control · Voice</b><br><span class="note" style="margin:0">Voice commands, TTS, microphone state.</span></li>
+    <li><b>Control · Mission</b><br><span class="note" style="margin:0">Task command entry and status feedback.</span></li>
+    <li><b>Data · Analysis dashboard</b><br><span class="note" style="margin:0">Quality metrics, Δp99, replay, HDF5.</span></li>
+    <li><b>Data · Head-fix collection</b><br><span class="note" style="margin:0">Real/sim, dual cameras, episode marking.</span></li>
+    <li><b>Data · Limit database</b><br><span class="note" style="margin:0">Critical tip angles, coverage, CSV export.</span></li>
+    <li><b>Data · Annotation</b><br><span class="note" style="margin:0">Grasp objects and placement locations.</span></li>
+    <li><b>Test · Test plan</b><br><span class="note" style="margin:0">Motion/calibration/perception/data/reliability.</span></li>
+    <li><b>Tools · Dance editor</b><br><span class="note" style="margin:0">Keyframes, 3D preview, real playback.</span></li>
+    <li><b>Tools · Head camera</b><br><span class="note" style="margin:0">percd live MJPEG (:8799).</span></li>
+    <li><b>Tools · Wrist camera</b><br><span class="note" style="margin:0">percg live MJPEG (:8800).</span></li>
   </div>
-  <p class="note">These live in each kit’s <code>developer-docs/</code> folder, and will be published for online reading here over time.</p>
+
+  <h3>Key concepts &amp; safety</h3>
+  <div class="faq">
+    <details open><summary>Real mode / local mode</summary><p>Real mode by default. If the robot stays offline for ~10 s, the console switches to local mode (pages remain usable). In local mode, if adb 5555 becomes reachable and stable for a few seconds, it switches back automatically; a <b>manual</b> local mode never auto-returns.</p></details>
+    <details><summary>Why the “side swing A” first?</summary><p>When the upper arm is close to the column, extending or unfolding directly can hit it. Move to a side-swing pose with more clearance, confirm the gap, then go to the target. The system skips this step when the path is already safe.</p></details>
+    <details><summary>What is head-fix?</summary><p>Rotate the arm around a <b>fixed tool-tip point</b> while the tip position stays unchanged; the tool axis is limited relative to the start orientation so the wrist camera does not flip. Useful to look at one target from different angles.</p></details>
+    <details><summary>Why grasp from above?</summary><p>Approaching from the side or below can hit the table edge, push the object away and hurt camera localisation. Raise the lift column above the table first, move to a pre-grasp pose (≥ table + 12 cm), then approach top-down; keep fingertips at least 1 cm above the table.</p></details>
+    <details><summary>How does the data loop work?</summary><p>Collect episodes at fixed points → annotate grasp/placement → record tip limit points → inspect quality and replay in the dashboard → train → validate with the test plan. Each step has a page and a data format.</p></details>
+    <details><summary>3D page blank / black?</summary><p>The 3D page needs WebGL. On machines without hardware GL (some Chromium / remote desktops) use Firefox, or launch the browser with software-rendering flags; on Jetson desktop, Firefox is recommended.</p></details>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="callout">Packages and source are not here: TV-box kits are on the <a href="projects.html">TV Box page</a>; robot source is on the <a href="robot.html">Robot page</a>. This docs page covers principles and steps only — downloads and checksums stay on the project pages.</div>
 </section>
 </main>
 
@@ -129,13 +139,13 @@
     <div class="cols">
       <div>
         <div class="brand" style="margin-bottom:6px"><img src="../assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
-        <div>openhwlab.com · OpenHW Lab<br>Open · Open-Source · Co-create · Share</div>
-        <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ: 1030889574</div>
+        <div>openhwlab.com · Built by the Intelligent Hardware Open Lab<br>Open · Open source · Co-create · Share</div>
+        <div style="margin-top:6px">Contact: <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a></div>
       </div>
-      <div><b style="color:#fff">Site</b><br><a href="projects.html">TV Box</a> · <a href="robot.html">Robot</a> · <a href="docs.html">Docs</a> · <a href="compare.html">Compare</a> · <a href="about.html">About</a></div>
-      <div><b style="color:#fff">Open source</b><br>MIT License</div>
+      <div><b style="color:#fff">Site</b><br><a href="robot.html">Robot</a> · <a href="projects.html">TV Box</a> · <a href="docs.html">Docs</a> · <a href="about.html">About</a></div>
+      <div><b style="color:#fff">License</b><br>MIT License</div>
     </div>
-    <p class="disc">For learning and personal use only. Repurposing carries risk — proceed at your own discretion. We do not provide or include any copyrighted firmware/system. Provided “AS IS”, without warranty of any kind.</p>
+    <p class="disc">For learning and research only. Repurposing and robot motion are risky — assess and use at your own risk. No copyrighted firmware/system is included. Provided “AS IS”, without warranty.</p>
   </div>
 </footer>
 </body>
