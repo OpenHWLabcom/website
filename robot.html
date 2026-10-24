@@ -206,6 +206,30 @@
   </div>
 </section>
 
+<section class="wrap" id="access">
+  <div class="sec-head"><h2>获取控制权限<span class="n">科沃思八界机器人</span></h2></div>
+  <p class="lead">八界（mvp03 六轴机械臂 + 升降立柱 + 头部俯仰 + 夹爪）的控制接口默认只对<b>实验室网络与授权合作方</b>开放。按下面流程申请，通过后会拿到设备地址、账号与控制台权限。</p>
+  <div class="cards two">
+    <div>
+      <ol class="steps">
+        <li><b>具备条件</b>：加入 OpenHW Lab 线下实验室网络，或已购买 / 借用八界设备。</li>
+        <li><b>提交申请</b>：邮件说明 <b>单位 / 联系人 / 设备型号 / 使用场景 / 网络环境</b>。</li>
+        <li><b>审核与授权</b>：确认用途与安全条件；按需开通 Jetson 控制台、机器人局域网访问、下板 SSH。</li>
+        <li><b>安全确认</b>：阅读并确认运动安全规则（急停、限位、抓取铁律）。</li>
+        <li><b>获取文档与联调</b>：下载控制接口文档；我们提供联调支持。</li>
+      </ol>
+      <p><a class="btn" href="mailto:hi@openhwlab.com?subject=%E7%94%B3%E8%AF%B7%E5%85%AB%E7%95%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%8E%A7%E5%88%B6%E6%9D%83%E9%99%90">申请控制权限</a></p>
+    </div>
+    <div class="callout">
+      <b>八界机器人控制接口文档 v1.0</b><br>
+      三种接入方式（HTTP API / Mission WebSocket / ROS 2）、端口与指令表、安全限位、部署清单与故障排查。<br><br>
+      <a class="btn ghost" href="dl/robot-control-api.md" download>下载接口文档（.md · 22 KB）</a><br><br>
+      <span class="note" style="margin:0">文档中的 IP / 密码均为占位符，授权后单独提供。接口默认无鉴权，仅限可信内网使用。</span>
+      <details><summary>文档 SHA-256</summary><code>1a797ec7cc222fd0aaa84a951a622e062f63ef57b2d29463a4c8f875daa74dde</code></details>
+    </div>
+  </div>
+</section>
+
 <section class="wrap" id="downloads">
   <div class="sec-head"><h2>下载与快速开始<span class="n">MIT · 源码包</span></h2></div>
   <div class="cards two">
@@ -217,7 +241,7 @@
       <div class="dl">
         <a class="btn" href="dl/openhwlab-robot-arm.zip" download>下载 .zip（3.9 MB）</a>
       </div>
-      <details><summary>校验 SHA-256</summary><code>c5a1810da806c8d47eead631194a85a234ff7438df9dfa6d289a93aaca805e45</code></details>
+      <details><summary>校验 SHA-256</summary><code>23fa6a66ab6b1ce89d92cee25f11de44a930ef25cfc9cae1963cc0536b711428</code></details>
     </article>
     <div class="callout">
       <b>三步跑起来：</b>
