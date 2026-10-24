@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Robot Open Source · 6-Axis Arm · OpenHW Lab</title>
-<meta name="description" content="OpenHW Lab robot open-source section: the BaJie 6-axis arm, fully open — 3D digital twin, control console, vision & voice, grasping, data collection/annotation, training analysis and acceptance tests. Grouped by Control / Data & Training / Test & Acceptance / Tools. MIT licensed, source package included.">
-<meta name="keywords" content="robot open source,6-axis robotic arm,robot control,ROS2,3D digital twin,grasping,data collection,imitation learning,open hardware,openhwlab">
+<title>Kewes BaJie Robot · 6-Axis Arm Open Source · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab robot open-source: the Kewes BaJie 6-axis arm, fully open — 3D digital twin, control console, vision & voice, grasping, data collection/annotation, training analysis and acceptance tests. Grouped by Control / Data & Training / Test & Acceptance / Tools. MIT licensed, source package included.">
+<meta name="keywords" content="Kewes,BaJie,robot open source,6-axis robotic arm,ROS2,3D digital twin,grasping,data collection,open hardware,openhwlab">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="../assets/logo.svg">
 <link rel="canonical" href="https://www.openhwlab.com/en/robot.html">
 <link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/robot.html">
 <link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/robot.html">
 <link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/robot.html">
-<meta property="og:title" content="Robot Open Source · 6-Axis Arm">
+<meta property="og:title" content="Kewes BaJie Robot · 6-Axis Arm Open Source">
 <meta property="og:description" content="3D digital twin, console, vision & voice, data collection and training loop — fully open source, grouped by module.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.openhwlab.com/en/robot.html">
@@ -41,7 +41,7 @@
     <p class="tag">6-axis arm · open from control to training</p>
     <p class="sub">3D digital twin, visual console, vision and voice, grasping strategies, data collection & annotation, training analysis and acceptance tests.<br>Source opened by four modules — Control / Data &amp; Training / Test &amp; Acceptance / Tools. MIT licensed.</p>
     <div class="cta">
-      <a class="btn" href="../dl/openhwlab-robot-arm.zip" download>↓ Download source (3.9 MB)</a>
+      <a class="btn" href="../dl/openhwlab-kewes-bajie-robot.zip" download>↓ Download source (3.9 MB)</a>
       <a class="btn ghost" href="#control">Browse by module</a>
     </div>
     <p class="meta">Control · Data &amp; Training · Test &amp; Acceptance · Tools</p>
@@ -50,11 +50,22 @@
 
 <main>
 <section class="wrap" style="padding-top:6px">
+  <div class="callout">
+    <b>Current open-source model: Kewes BaJie Robot</b> · 6-axis collaborative arm + lift column + two-finger gripper.<br>
+    Robot open source is organised by <b>brand / model</b>; more brands and models will be added.
+    <div style="margin-top:10px">
+      <a class="btn ghost" href="https://github.com/OpenHWLabcom/kewes-bajie-robot" target="_blank" rel="noopener">GitHub repository ↗</a>
+      <a class="btn ghost" href="#downloads">Download source</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:6px">
   <div class="cards four">
     <article class="card">
       <div class="ic">🦾</div>
       <h3>Hardware</h3>
-      <p><b>6-axis collaborative arm</b> + lift column (0–0.44 m) + two-finger gripper (0–0.69), head and wrist cameras.</p>
+      <p><b>Kewes · BaJie</b>: 6-axis collaborative arm + lift column (0–0.44 m) + two-finger gripper (0–0.69), head and wrist cameras.</p>
       <ul class="tags"><li>6-axis</li><li>Lift</li><li>Gripper</li></ul>
     </article>
     <article class="card">
@@ -235,13 +246,13 @@
   <div class="cards two">
     <article class="card">
       <div class="ic">📦</div>
-      <h3>Robot source package</h3>
+      <h3>Kewes BaJie robot source package</h3>
       <p>Host console + lower-board scripts + meshes + docs — 216 files.</p>
       <ul class="tags"><li>host/</li><li>lower/</li><li>docs/</li><li>MIT</li></ul>
       <div class="dl">
-        <a class="btn" href="../dl/openhwlab-robot-arm.zip" download>Download .zip (3.9 MB)</a>
+        <a class="btn" href="../dl/openhwlab-kewes-bajie-robot.zip" download>Download .zip (3.9 MB)</a>
       </div>
-      <details><summary>SHA-256</summary><code>a6a6f00f6c912a46cda21beb1dbb5e1e7a78852428b4c892d918704786e010df</code></details>
+      <details><summary>SHA-256</summary><code>5e79085b07738e49f039f3e45eb5cab61c543697dd039a46d41c297c3dfc1b72</code></details>
     </article>
     <div class="callout">
       <b>Three steps:</b>
@@ -259,7 +270,7 @@
 <section class="wrap">
   <div class="sec-head"><h2>Verify &amp; Version</h2></div>
   <div class="callout">
-    <b>Verify:</b> Windows (PowerShell) <code>Get-FileHash .\openhwlab-robot-arm.zip -Algorithm SHA256</code>; macOS / Linux <code>sha256sum openhwlab-robot-arm.zip</code>. Matches the SHA-256 above → intact official package.<br><br>
+    <b>Verify:</b> Windows (PowerShell) <code>Get-FileHash .\openhwlab-kewes-bajie-robot.zip -Algorithm SHA256</code>; macOS / Linux <code>sha256sum openhwlab-kewes-bajie-robot.zip</code>. Matches the SHA-256 above → intact official package.<br><br>
     <b>Changelog:</b> 2026-10-24 · first public release (216 files / MIT): console + 3D digital twin + data collection/training analysis + ROS 2 lower-board scripts.
   </div>
 </section>
