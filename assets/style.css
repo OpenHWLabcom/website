@@ -30,6 +30,8 @@ code{background:#0a1322;border:1px solid var(--line);border-radius:6px;padding:2
 .nav nav{display:flex;align-items:center;gap:2px;flex-wrap:wrap;margin-left:auto;order:3}
 .nav nav a{margin-left:14px;color:var(--mut);font-size:14px;padding:4px 2px;border-bottom:2px solid transparent}
 .nav nav a:hover,.nav nav a.on{color:#fff;border-bottom-color:var(--acc)}
+.nav nav a.hot{margin-left:16px;padding:7px 13px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#08111f;font-weight:800;border-bottom:0;box-shadow:0 4px 14px rgba(74,157,240,.35)}
+.nav nav a.hot:hover{color:#08111f;filter:brightness(1.06);border-bottom-color:transparent}
 .brand{order:1}
 .nav-slogan{order:2;font-size:13px;font-weight:800;letter-spacing:.22em;color:var(--acc2);white-space:nowrap;
   pointer-events:none;padding-left:14px;margin-left:4px;border-left:1px solid var(--line)}
