@@ -136,3 +136,24 @@ footer .disc{color:#5d6f8a;font-size:12px;margin-top:16px}
   .hero{padding:48px 0 30px}
   .brand span.t{display:none}
 }
+
+/* ---------- application form ---------- */
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}
+.formcard h3{margin:0 0 4px;font-size:18px;color:#fff}
+.formcard .hint{color:var(--mut2);font-size:12px;margin:0 0 16px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;color:#c4d3e8;font-weight:600}
+.field label .req{color:var(--warn)}
+.field input,.field select,.field textarea{background:#0a1322;border:1px solid var(--line);border-radius:9px;color:var(--fg);
+  padding:9px 11px;font:inherit;font-size:14px;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(74,157,240,.12)}
+.field textarea{min-height:82px;resize:vertical}
+.field .sub{color:var(--mut2);font-size:11px;font-weight:400}
+.checklist{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:2px}
+.checklist label{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;color:#c4d3e8}
+.checklist input{width:auto}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.form-note{color:var(--mut2);font-size:12px;margin-top:14px}
+@media(max-width:720px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}

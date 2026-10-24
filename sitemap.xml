@@ -33,6 +33,12 @@
     <changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.openhwlab.com/apply.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/apply.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/apply.html"/>
+    <changefreq>monthly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.openhwlab.com/about.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/about.html"/>
@@ -43,5 +49,6 @@
   <url><loc>https://www.openhwlab.com/en/robot.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.openhwlab.com/en/docs.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.openhwlab.com/en/labs.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.openhwlab.com/en/apply.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.openhwlab.com/en/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>

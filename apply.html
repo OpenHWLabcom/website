@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>申请共建线下实验室 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 线下实验室申请表：填写申请人、机构、场地设备、参与方向与安全信息，申请成为「字号+智能硬件开放实验室」节点。">
+<meta name="keywords" content="线下实验室申请,共建实验室,开放硬件实验室,实验室合作,openhwlab">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="assets/logo.svg">
+<link rel="canonical" href="https://www.openhwlab.com/apply.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.openhwlab.com/apply.html">
+<link rel="alternate" hreflang="en" href="https://www.openhwlab.com/en/apply.html">
+<link rel="alternate" hreflang="x-default" href="https://www.openhwlab.com/apply.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">智能硬件开放实验室 联盟</span>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab.com</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="robot.html">机器人</a>
+      <a href="projects.html">机顶盒</a>
+      <a href="docs.html">教程</a>
+      <a href="about.html">关于</a>
+      <a class="hot" href="labs.html">共建线下实验室</a>
+      <a class="lang" href="en/apply.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:52px 0 26px">
+  <div class="wrap">
+    <h1>申请共建<span class="hl">线下实验室</span></h1>
+    <p class="tag">填写信息 · 加入联盟 · 就近研究、测试与交流</p>
+    <p class="sub">请尽量填写完整，方便我们了解你的场地、设备与参与方向。<br>提交后会打开你的邮件客户端；也可以复制或下载申请内容，发送到 <a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a>。</p>
+  </div>
+</section>
+
+<main>
+<section class="wrap">
+  <form id="applyForm" novalidate>
+    <div class="formcard">
+      <h3>一、基本信息</h3>
+      <p class="hint">用于联系与确认申请，不会公开展示。</p>
+      <div class="form-grid">
+        <div class="field"><label for="f-name">申请人姓名 <span class="req">*</span></label><input id="f-name" required placeholder="你的姓名"></div>
+        <div class="field"><label for="f-contact">联系方式 <span class="req">*</span></label><input id="f-contact" required placeholder="手机 / 微信"><span class="sub">优先填微信或手机，方便沟通</span></div>
+        <div class="field"><label for="f-email">邮箱</label><input id="f-email" type="email" placeholder="name@example.com"></div>
+        <div class="field"><label for="f-city">所在城市 / 地区 <span class="req">*</span></label><input id="f-city" required placeholder="例如：深圳 / 南山区"></div>
+      </div>
+    </div>
+
+    <div class="formcard">
+      <h3>二、机构 / 团队</h3>
+      <p class="hint">个人、创客空间、高校、企业都可以申请。</p>
+      <div class="form-grid">
+        <div class="field"><label for="f-org">单位 / 团队名称 <span class="req">*</span></label><input id="f-org" required placeholder="公司、机构、社团或团队名称"></div>
+        <div class="field"><label for="f-type">类型 <span class="req">*</span></label>
+          <select id="f-type" required>
+            <option value="">请选择</option>
+            <option>个人 / 爱好者</option>
+            <option>创客空间 / 工作室</option>
+            <option>高校 / 科研机构</option>
+            <option>企业 / 机构</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-role">职务 / 角色</label><input id="f-role" placeholder="例如：负责人 / 发起人 / 技术负责人"></div>
+        <div class="field"><label for="f-brand">拟用实验室字号 <span class="req">*</span></label><input id="f-brand" required placeholder="例如：XX"><span class="sub">全称将为「你的字号 + 智能硬件开放实验室」</span></div>
+        <div class="field"><label for="f-cert">是否接受挂牌与认证</label>
+          <select id="f-cert">
+            <option>接受</option>
+            <option>了解后再定</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="formcard">
+      <h3>三、场地与设备</h3>
+      <p class="hint">不需要一开始就“什么都有”，如实填写即可。</p>
+      <div class="form-grid">
+        <div class="field"><label for="f-address">场地地址 / 区域 <span class="req">*</span></label><input id="f-address" required placeholder="可只填城市 + 区/街道"></div>
+        <div class="field"><label for="f-space">场地性质</label>
+          <select id="f-space">
+            <option value="">请选择</option>
+            <option>自有</option>
+            <option>租赁</option>
+            <option>合作 / 共享</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-area">面积</label><input id="f-area" placeholder="例如：30 ㎡"></div>
+        <div class="field"><label for="f-hours">可开放时间</label><input id="f-hours" placeholder="例如：周末 10:00–18:00 / 预约制"></div>
+        <div class="field"><label for="f-capacity">可容纳人数</label><input id="f-capacity" placeholder="例如：5–10 人"></div>
+        <div class="field full"><label for="f-equipment">现有设备</label><textarea id="f-equipment" placeholder="例如：机械臂 / 3D 打印机 / 示波器 / 电烙铁 / 测试仪器 / 服务器 / 无人机 …"></textarea></div>
+      </div>
+    </div>
+
+    <div class="formcard">
+      <h3>四、参与方向</h3>
+      <p class="hint">可多选；没有设备也可以先做测试、交流或内容节点。</p>
+      <div class="form-grid">
+        <div class="field full"><label>想参与的领域</label>
+          <div class="checklist">
+            <label><input type="checkbox" name="fields" value="机器人"> 机器人</label>
+            <label><input type="checkbox" name="fields" value="无人机"> 无人机</label>
+            <label><input type="checkbox" name="fields" value="开发板"> 开发板</label>
+            <label><input type="checkbox" name="fields" value="服务器"> 服务器</label>
+            <label><input type="checkbox" name="fields" value="嵌入式系统"> 嵌入式系统</label>
+            <label><input type="checkbox" name="fields" value="二次开发"> 二次开发</label>
+            <label><input type="checkbox" name="fields" value="其他"> 其他</label>
+          </div>
+        </div>
+        <div class="field full"><label for="f-resources">能提供的资源 / 能力</label><textarea id="f-resources" placeholder="场地、设备、测试能力、课程、内容、渠道、志愿者 …"></textarea></div>
+        <div class="field full"><label for="f-expect">期望从联盟获得什么</label><textarea id="f-expect" placeholder="试用产品、测试方法、项目资料、联合活动、经销商资质、渠道合作 …"></textarea></div>
+        <div class="field full"><label for="f-plan">计划开展的活动 / 项目</label><textarea id="f-plan" placeholder="例如：每月一次拆机夜、机器人抓取测试、开源硬件共学 …"></textarea></div>
+      </div>
+    </div>
+
+    <div class="formcard">
+      <h3>五、安全与确认</h3>
+      <p class="hint">涉及机械臂、无人机、激光等设备时，请明确安全负责人。</p>
+      <div class="form-grid">
+        <div class="field"><label for="f-safety">安全负责人</label><input id="f-safety" placeholder="姓名 / 职务"></div>
+        <div class="field"><label for="f-insurance">场地保险</label>
+          <select id="f-insurance">
+            <option value="">请选择</option>
+            <option>有</option>
+            <option>计划中</option>
+            <option>无</option>
+            <option>不适用</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label><input type="checkbox" id="f-safety-ok" required> 我确认遵守 OpenHW Lab 的安全规范，并在活动前完成风险评估 <span class="req">*</span></label>
+          <label><input type="checkbox" id="f-consent" required> 我同意以上信息仅用于申请审核、联系与节点展示 <span class="req">*</span></label>
+          <label><input type="checkbox" id="f-open"> 我愿意将可公开的研究成果署名开源（不作强制要求）</label>
+        </div>
+        <div class="field full"><label for="f-notes">补充说明</label><textarea id="f-notes" placeholder="任何想让我们了解的信息"></textarea></div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn">提交申请（打开邮件）</button>
+      <button type="button" class="btn ghost" id="copyBtn">复制申请内容</button>
+      <button type="button" class="btn ghost" id="downloadBtn">下载申请文本（.txt）</button>
+      <a class="btn ghost" href="labs.html">返回共建计划</a>
+    </div>
+    <p class="form-note">提交不会上传到服务器，而是生成一封发往 <b>hi@openhwlab.com</b> 的邮件；我们通常在 3 个工作日内回复。若邮件客户端未配置，请用「复制」或「下载」后手动发送。</p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab.com</span></div>
+        <div>openhwlab.com · 智能硬件开放实验室<br>共建全球线下实验室联盟</div>
+        <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
+      </div>
+      <div><b style="color:#fff">导航</b><br><a href="robot.html">机器人</a> · <a href="projects.html">机顶盒</a> · <a href="docs.html">教程</a> · <a href="about.html">关于</a> · <a href="labs.html">共建实验室</a></div>
+      <div><b style="color:#fff">开源</b><br>MIT License · <a href="https://github.com/OpenHWLabcom" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+    <p class="disc">仅供学习与研究。硬件改造与机器人运动有风险，请自行评估、自负后果；不提供也不包含任何受版权保护的固件/系统。本工具按「现状(AS IS)」提供，无任何担保。</p>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function val(id){ const e=$(id); return e ? (e.value||'').trim() : ''; }
+function checked(id){ const e=$(id); return !!(e && e.checked); }
+function fields(){ return Array.from(document.querySelectorAll('input[name="fields"]:checked')).map(x=>x.value); }
+function buildText(){
+  const L=[];
+  L.push('【OpenHW Lab 线下实验室申请表】');
+  L.push('');
+  L.push('一、基本信息');
+  L.push('姓名：'+val('f-name'));
+  L.push('联系方式：'+val('f-contact'));
+  L.push('邮箱：'+val('f-email'));
+  L.push('城市/地区：'+val('f-city'));
+  L.push('');
+  L.push('二、机构/团队');
+  L.push('单位/团队：'+val('f-org'));
+  L.push('类型：'+val('f-type'));
+  L.push('职务/角色：'+val('f-role'));
+  L.push('拟用实验室字号：'+val('f-brand'));
+  L.push('挂牌与认证：'+val('f-cert'));
+  L.push('');
+  L.push('三、场地与设备');
+  L.push('地址/区域：'+val('f-address'));
+  L.push('场地性质：'+val('f-space'));
+  L.push('面积：'+val('f-area'));
+  L.push('可开放时间：'+val('f-hours'));
+  L.push('可容纳人数：'+val('f-capacity'));
+  L.push('现有设备：'+val('f-equipment'));
+  L.push('');
+  L.push('四、参与方向');
+  L.push('想参与的领域：'+fields().join('、'));
+  L.push('能提供的资源/能力：'+val('f-resources'));
+  L.push('期望从联盟获得：'+val('f-expect'));
+  L.push('计划开展的活动/项目：'+val('f-plan'));
+  L.push('');
+  L.push('五、安全与确认');
+  L.push('安全负责人：'+val('f-safety'));
+  L.push('场地保险：'+val('f-insurance'));
+  L.push('遵守安全规范：'+(checked('f-safety-ok')?'是':'否'));
+  L.push('同意信息使用：'+(checked('f-consent')?'是':'否'));
+  L.push('愿意署名开源：'+(checked('f-open')?'是':'否'));
+  L.push('补充说明：'+val('f-notes'));
+  return L.join('\n');
+}
+function flash(msg){ const n=document.querySelector('.form-note'); if(n){ if(!n.dataset.old) n.dataset.old=n.textContent; n.textContent=msg; clearTimeout(window.__ft); window.__ft=setTimeout(()=>{n.textContent=n.dataset.old;},3200); } }
+$('applyForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!$('applyForm').checkValidity()){ $('applyForm').reportValidity(); return; }
+  const text=buildText();
+  const subject='申请共建线下实验室 - '+val('f-name')+' - '+val('f-city');
+  location.href='mailto:hi@openhwlab.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text);
+});
+$('copyBtn').onclick=async()=>{
+  const text=buildText();
+  try{ await navigator.clipboard.writeText(text); flash('已复制申请内容，可粘贴到邮件/微信发送。'); }
+  catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); flash('已复制申请内容。'); }
+};
+$('downloadBtn').onclick=()=>{
+  const text=buildText();
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
+  a.download='openhwlab-lab-application-'+(val('f-name')||'applicant')+'.txt';
+  a.click(); URL.revokeObjectURL(a.href);
+};
+</script>
+</body>
+</html>
