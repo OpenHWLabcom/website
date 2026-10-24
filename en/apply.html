@@ -41,10 +41,31 @@
 
 <main>
 <section class="wrap">
-  <form id="applyForm" novalidate>
-    <div class="formcard">
-      <h3>1. Basic information</h3>
-      <p class="hint">Used for contact and review only; not shown publicly.</p>
+  <div class="apply-layout">
+    <aside class="apply-side">
+      <div class="side-card">
+        <h3>Process</h3>
+        <ol class="side-steps"><li>Fill in the form</li><li>Review &amp; talk</li><li>Plaque &amp; join</li><li>Run activities</li></ol>
+      </div>
+      <div class="side-card">
+        <h3>Progress</h3>
+        <div class="progress"><div id="pbar"></div></div>
+        <div class="pmeta"><span id="ppct">0%</span><span>* required</span></div>
+      </div>
+      <div class="side-card">
+        <h3>Tips</h3>
+        <ul><li>Be accurate about space/equipment; a testing or exchange node is fine.</li><li>No robot required.</li><li>The form is not uploaded; submitting opens your mail client.</li></ul>
+      </div>
+      <div class="side-card">
+        <h3>Contact</h3>
+        <p>hi@openhwlab.com<br>QQ: 1030889574</p>
+      </div>
+    </aside>
+    <div class="apply-main">
+    <form id="applyForm" novalidate>
+    <p class="form-intro">About 5–8 minutes · * required</p>
+    <div class="formcard" id="sec1">
+      <div class="form-head"><span class="step-no">1</span><div><h3>Basic information</h3><p class="hint">Used for contact and review only; not shown publicly.</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-name">Name <span class="req">*</span></label><input id="f-name" required placeholder="Your name"></div>
         <div class="field"><label for="f-contact">Contact <span class="req">*</span></label><input id="f-contact" required placeholder="Phone / WeChat"><span class="sub">WeChat or phone preferred</span></div>
@@ -53,9 +74,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>2. Organisation / team</h3>
-      <p class="hint">Individuals, makerspaces, universities and companies are all welcome.</p>
+    <div class="formcard" id="sec2">
+      <div class="form-head"><span class="step-no">2</span><div><h3>Organisation / team</h3><p class="hint">Individuals, makerspaces, universities and companies are all welcome.</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-org">Organisation / team <span class="req">*</span></label><input id="f-org" required placeholder="Company, institution, club or team"></div>
         <div class="field"><label for="f-type">Type <span class="req">*</span></label>
@@ -79,9 +99,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>3. Space &amp; equipment</h3>
-      <p class="hint">You do not need everything on day one; just be accurate.</p>
+    <div class="formcard" id="sec3">
+      <div class="form-head"><span class="step-no">3</span><div><h3>Space &amp; equipment</h3><p class="hint">You do not need everything on day one; just be accurate.</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-address">Address / area <span class="req">*</span></label><input id="f-address" required placeholder="City + district is enough"></div>
         <div class="field"><label for="f-space">Space type</label>
@@ -100,9 +119,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>4. Focus areas</h3>
-      <p class="hint">Multiple choices allowed; a testing, exchange or content node is also fine without equipment.</p>
+    <div class="formcard" id="sec4">
+      <div class="form-head"><span class="step-no">4</span><div><h3>Focus areas</h3><p class="hint">Multiple choices allowed; a testing, exchange or content node is also fine without equipment.</p></div></div>
       <div class="form-grid">
         <div class="field full"><label>Areas of interest</label>
           <div class="checklist">
@@ -121,9 +139,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>5. Safety &amp; confirmation</h3>
-      <p class="hint">For arms, drones, lasers and similar equipment, please name a safety lead.</p>
+    <div class="formcard" id="sec5">
+      <div class="form-head"><span class="step-no">5</span><div><h3>Safety &amp; confirmation</h3><p class="hint">For arms, drones, lasers and similar equipment, please name a safety lead.</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-safety">Safety lead</label><input id="f-safety" placeholder="Name / role"></div>
         <div class="field"><label for="f-insurance">Venue insurance</label>
@@ -152,6 +169,8 @@
     </div>
     <p class="form-note">Submitting does not upload to a server; it creates an email to <b>hi@openhwlab.com</b>. We usually reply within 3 business days. If your mail client is not configured, use Copy or Download and send it manually.</p>
   </form>
+    </div>
+  </div>
 </section>
 </main>
 
@@ -228,6 +247,17 @@ $('copyBtn').onclick=async()=>{
   try{ await navigator.clipboard.writeText(text); flash('Application copied. Paste it into an email or chat.'); }
   catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); flash('Application copied.'); }
 };
+
+function updateProgress(){
+  const req=Array.from(document.querySelectorAll('#applyForm [required]'));
+  let done=0;
+  req.forEach(e=>{ if(e.type==='checkbox'?e.checked:(e.value||'').trim()!=='') done++; });
+  const pct=req.length?Math.round(done/req.length*100):0;
+  const b=document.getElementById('pbar'), t=document.getElementById('ppct');
+  if(b) b.style.width=pct+'%'; if(t) t.textContent=pct+'%';
+}
+['input','change'].forEach(ev=>$('applyForm').addEventListener(ev,updateProgress));
+updateProgress();
 $('downloadBtn').onclick=()=>{
   const text=buildText();
   const a=document.createElement('a');

@@ -41,10 +41,31 @@
 
 <main>
 <section class="wrap">
-  <form id="applyForm" novalidate>
-    <div class="formcard">
-      <h3>一、基本信息</h3>
-      <p class="hint">用于联系与确认申请，不会公开展示。</p>
+  <div class="apply-layout">
+    <aside class="apply-side">
+      <div class="side-card">
+        <h3>申请流程</h3>
+        <ol class="side-steps"><li>填写信息</li><li>沟通确认</li><li>挂牌加入</li><li>开展活动</li></ol>
+      </div>
+      <div class="side-card">
+        <h3>填写进度</h3>
+        <div class="progress"><div id="pbar"></div></div>
+        <div class="pmeta"><span id="ppct">0%</span><span>带 * 为必填</span></div>
+      </div>
+      <div class="side-card">
+        <h3>填写提示</h3>
+        <ul><li>场地/设备如实填写，没有也可以先做测试或交流节点。</li><li>没有机器人也可以申请。</li><li>表单不会上传服务器，提交会打开邮件客户端。</li></ul>
+      </div>
+      <div class="side-card">
+        <h3>联系我们</h3>
+        <p>hi@openhwlab.com<br>QQ：1030889574</p>
+      </div>
+    </aside>
+    <div class="apply-main">
+    <form id="applyForm" novalidate>
+    <p class="form-intro">预计 5–8 分钟 · 带 * 为必填</p>
+    <div class="formcard" id="sec1">
+      <div class="form-head"><span class="step-no">1</span><div><h3>基本信息</h3><p class="hint">用于联系与确认申请，不会公开展示。</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-name">申请人姓名 <span class="req">*</span></label><input id="f-name" required placeholder="你的姓名"></div>
         <div class="field"><label for="f-contact">联系方式 <span class="req">*</span></label><input id="f-contact" required placeholder="手机 / 微信"><span class="sub">优先填微信或手机，方便沟通</span></div>
@@ -53,9 +74,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>二、机构 / 团队</h3>
-      <p class="hint">个人、创客空间、高校、企业都可以申请。</p>
+    <div class="formcard" id="sec2">
+      <div class="form-head"><span class="step-no">2</span><div><h3>机构 / 团队</h3><p class="hint">个人、创客空间、高校、企业都可以申请。</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-org">单位 / 团队名称 <span class="req">*</span></label><input id="f-org" required placeholder="公司、机构、社团或团队名称"></div>
         <div class="field"><label for="f-type">类型 <span class="req">*</span></label>
@@ -79,9 +99,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>三、场地与设备</h3>
-      <p class="hint">不需要一开始就“什么都有”，如实填写即可。</p>
+    <div class="formcard" id="sec3">
+      <div class="form-head"><span class="step-no">3</span><div><h3>场地与设备</h3><p class="hint">不需要一开始就“什么都有”，如实填写即可。</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-address">场地地址 / 区域 <span class="req">*</span></label><input id="f-address" required placeholder="可只填城市 + 区/街道"></div>
         <div class="field"><label for="f-space">场地性质</label>
@@ -100,9 +119,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>四、参与方向</h3>
-      <p class="hint">可多选；没有设备也可以先做测试、交流或内容节点。</p>
+    <div class="formcard" id="sec4">
+      <div class="form-head"><span class="step-no">4</span><div><h3>参与方向</h3><p class="hint">可多选；没有设备也可以先做测试、交流或内容节点。</p></div></div>
       <div class="form-grid">
         <div class="field full"><label>想参与的领域</label>
           <div class="checklist">
@@ -121,9 +139,8 @@
       </div>
     </div>
 
-    <div class="formcard">
-      <h3>五、安全与确认</h3>
-      <p class="hint">涉及机械臂、无人机、激光等设备时，请明确安全负责人。</p>
+    <div class="formcard" id="sec5">
+      <div class="form-head"><span class="step-no">5</span><div><h3>安全与确认</h3><p class="hint">涉及机械臂、无人机、激光等设备时，请明确安全负责人。</p></div></div>
       <div class="form-grid">
         <div class="field"><label for="f-safety">安全负责人</label><input id="f-safety" placeholder="姓名 / 职务"></div>
         <div class="field"><label for="f-insurance">场地保险</label>
@@ -152,6 +169,8 @@
     </div>
     <p class="form-note">提交不会上传到服务器，而是生成一封发往 <b>hi@openhwlab.com</b> 的邮件；我们通常在 3 个工作日内回复。若邮件客户端未配置，请用「复制」或「下载」后手动发送。</p>
   </form>
+    </div>
+  </div>
 </section>
 </main>
 
@@ -228,6 +247,17 @@ $('copyBtn').onclick=async()=>{
   try{ await navigator.clipboard.writeText(text); flash('已复制申请内容，可粘贴到邮件/微信发送。'); }
   catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); flash('已复制申请内容。'); }
 };
+
+function updateProgress(){
+  const req=Array.from(document.querySelectorAll('#applyForm [required]'));
+  let done=0;
+  req.forEach(e=>{ if(e.type==='checkbox'?e.checked:(e.value||'').trim()!=='') done++; });
+  const pct=req.length?Math.round(done/req.length*100):0;
+  const b=document.getElementById('pbar'), t=document.getElementById('ppct');
+  if(b) b.style.width=pct+'%'; if(t) t.textContent=pct+'%';
+}
+['input','change'].forEach(ev=>$('applyForm').addEventListener(ev,updateProgress));
+updateProgress();
 $('downloadBtn').onclick=()=>{
   const text=buildText();
   const a=document.createElement('a');
