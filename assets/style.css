@@ -22,7 +22,7 @@ code{background:#0a1322;border:1px solid var(--line);border-radius:6px;padding:2
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:50;background:rgba(11,18,32,.82);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;height:60px;gap:12px}
+.nav .wrap{display:flex;align-items:center;min-height:60px;gap:12px;padding:6px 20px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.3px;color:#fff;font-size:17px;white-space:nowrap}
 .brand .dot{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--acc),var(--acc2));
   display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#08111f;font-weight:900}
@@ -186,3 +186,21 @@ footer .disc{color:#5d6f8a;font-size:12px;margin-top:16px}
   .apply-side{position:static;order:2;display:grid;grid-template-columns:1fr 1fr}
 }
 @media(max-width:620px){.apply-side{grid-template-columns:1fr}.form-head{margin-bottom:13px}}
+
+/* ---------- oss daily ---------- */
+.ossstats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 6px}
+.ossstat{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.ossstat .k{font-size:12px;color:var(--mut2)}
+.ossstat .v{font-size:24px;font-weight:800;color:#fff;margin:2px 0;font-variant-numeric:tabular-nums}
+@media(max-width:820px){.ossstats{grid-template-columns:1fr 1fr}}
+.slogan{font-size:clamp(26px,4.6vw,42px);font-weight:800;color:#fff;line-height:1.25;letter-spacing:.02em;margin:0 0 12px}
+
+/* ---------- 已下线方案卡片（变灰，不提供下载） ---------- */
+.card.off{background:rgba(148,163,184,.07);border-style:dashed;border-color:#3d4b63}
+.card.off>*:not(.offline-note){opacity:.45;filter:grayscale(1)}
+.card.off:hover{transform:none;border-color:#3d4b63}
+.badge.offline{background:#475569;color:#e8eef7}
+.btn.offline,.btn.offline:hover{background:#334155;border:1px solid #475569;color:#a9b8cc;cursor:not-allowed;filter:none;pointer-events:none;font-weight:700}
+.offline-note{margin:10px 0 0;padding:9px 12px;border:1px dashed #8b9bb4;border-radius:10px;background:rgba(148,163,184,.14);color:#e6edf7;font-size:13px;font-weight:700;line-height:1.6}
+.offline-banner{margin:14px 0 0;padding:12px 16px;border:1px solid #8b9bb4;border-left:4px solid #94a3b8;border-radius:12px;background:rgba(148,163,184,.12);color:#dfe7f2;font-size:14px;line-height:1.75}
+.card.off details{display:none}

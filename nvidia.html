@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开源 NVIDIA 技术 · OpenHW Lab</title>
+<meta name="description" content="OpenHW Lab 整理的开源 / 授权 NVIDIA 技术清单：Isaac ROS、TensorRT、DeepStream、Warp、cuRobo、JetPack/NGC 等，标注 Orin 可用与需 RTX 的项目。">
+<meta name="keywords" content="开源 NVIDIA 技术,Isaac ROS,TensorRT,DeepStream,cuRobo,Warp,JetPack,Orin,OpenHW Lab">
+<link rel="canonical" href="https://www.openhwlab.com/nvidia.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="nav-slogan">智能硬件开放实验室 联盟</span>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24"><span class="t">Open<b>HW</b> Lab.com</span></a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="robot.html">机器人</a>
+      <a href="nvidia.html" class="on">英伟达</a>
+      <a href="projects.html">机顶盒</a>
+      <a href="docs.html">教程</a>
+      <a href="oss.html">开源技术日报</a>
+      <a href="about.html">关于</a>
+      <a class="hot" href="labs.html">共建线下实验室</a>
+      <a class="lang" href="en/nvidia.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge">OpenHW Lab · NVIDIA</div>
+  <h1>开源 <span class="hl">NVIDIA 技术</span></h1>
+  <p class="tag">Orin 可用 · 需 RTX / 云 · 一页看清</p>
+  <p class="sub">只列技术、用途、开源 / 授权方式和本机可用性，不展开教程与评测。</p>
+  <p class="meta">共 12 项 · 6 项 Orin 可用 · 6 项需 RTX / 云</p>
+</section>
+
+<section class="wrap">
+  <div class="sec-head">
+    <h2>技术清单<span class="n">按本机可用性排序</span></h2>
+  </div>
+  <div style="overflow:auto">
+    <table>
+      <thead><tr><th>技术</th><th>用途</th><th>开源 / 授权</th><th>本机可用性</th></tr></thead>
+      <tbody>
+        <tr><td><b>Isaac ROS</b></td><td>cuVSLAM、nvblox、DNN 立体视觉、NITROS</td><td>开源</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>DeepStream</b></td><td>多路相机解码、推理、跟踪</td><td>SDK 授权</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>TensorRT</b></td><td>推理优化、FP16 / INT8 engine</td><td>JetPack 授权</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>Warp</b></td><td>GPU 物理 / 可微仿真</td><td>Apache-2.0（开源）</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>cuRobo</b></td><td>GPU IK / 碰撞检测 / 轨迹</td><td>开源</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>JetPack / NGC</b></td><td>Orin 系统与容器镜像</td><td>JetPack 授权</td><td><b style="color:#8ff0b8">Orin 可用</b></td></tr>
+        <tr><td><b>Isaac Sim</b></td><td>物理仿真、合成数据</td><td>NVIDIA 授权</td><td><b style="color:#f0d79a">需 RTX</b></td></tr>
+        <tr><td><b>Isaac Lab</b></td><td>RL / 模仿学习 / 策略评估</td><td>BSD-3（开源）</td><td><b style="color:#f0d79a">需 RTX</b></td></tr>
+        <tr><td><b>TAO Toolkit</b></td><td>视觉模型微调</td><td>NGC 授权</td><td><b style="color:#f0d79a">需 RTX / 云</b></td></tr>
+        <tr><td><b>Isaac GR00T N1.7</b></td><td>VLA 微调</td><td>开放权重 / 代码</td><td><b style="color:#f0d79a">需 RTX / Thor</b></td></tr>
+        <tr><td><b>Cosmos</b></td><td>合成数据 / 世界模型</td><td>开放模型</td><td><b style="color:#f0d79a">需大显存</b></td></tr>
+        <tr><td><b>Omniverse</b></td><td>OpenUSD 资产管线</td><td>个人授权</td><td><b style="color:#f0d79a">需 RTX</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">“开源”指公开源码或开放权重；“授权”指可使用但源码不开放。具体许可以 NVIDIA 官方发布为准。</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand" style="margin-bottom:6px"><img src="assets/logo.svg" alt="" width="22" height="22"><span class="t">Open<b>HW</b> Lab</span></div>
+        <div>openhwlab.com · 智能硬件开放实验室<br>共建全球线下实验室联盟</div>
+        <div style="margin-top:6px">联系 / 投稿：<a href="mailto:hi@openhwlab.com">hi@openhwlab.com</a> · QQ：1030889574</div>
+      </div>
+      <div>
+        <b style="color:#fff">导航</b><br>
+        <a href="robot.html">机器人</a> · <a href="nvidia.html">英伟达</a> · <a href="projects.html">机顶盒</a> · <a href="docs.html">教程</a> · <a href="about.html">关于</a> · <a href="labs.html">共建实验室</a>
+      </div>
+      <div>
+        <b style="color:#fff">开源</b><br>
+        MIT License · <a href="https://github.com/OpenHWLabcom" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <p class="disc">仅供学习与个人使用。改造有风险，请自行评估、自负后果；本项目不提供也不包含任何受版权保护的固件/系统；请遵守当地法律法规与设备保修条款。本工具按「现状(AS IS)」提供，无任何担保。</p>
+  </div>
+</footer>
+</body>
+</html>

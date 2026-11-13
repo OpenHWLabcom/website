@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TV Box Projects · OpenHW Lab</title>
-<meta name="description" content="OpenHW Lab TV-box projects: the repurposing series (game console / mini PC / NVR / print server / NAS / ad-block DNS).">
+<meta name="description" content="OpenHW Lab TV-box projects: the repurposing series (game console / mini PC / NVR / print server / ad-block DNS).">
 <meta name="theme-color" content="#0b1220">
 <link rel="icon" href="../assets/logo.svg">
 <link rel="canonical" href="https://www.openhwlab.com/en/projects.html">
@@ -21,8 +21,10 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="robot.html">Robot</a>
+      <a href="nvidia.html">NVIDIA</a>
       <a href="projects.html" class="on">TV Box</a>
       <a href="docs.html">Docs</a>
+      <a href="oss.html">Open-Source Daily</a>
       <a href="about.html">About</a>
       <a class="hot" href="labs.html">Local Labs</a>
       <a class="lang" href="../projects.html"><b>中文</b></a>
@@ -41,6 +43,7 @@
 <section class="wrap" id="stb">
   <div class="sec-head"><h2>TV-Box Repurpose Series<span class="n">Give idle Android TV boxes a second life</span></h2></div>
     <div class="subhead"><h3>Model builds · tested per box</h3><span class="more">Built & tested on specific boxes (ADB auth / autostart / pointer patch, etc.)</span></div>
+  <p class="note" style="background:var(--card);border:1px solid #2f4570;border-left:4px solid #3b82f6;border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.8;color:#c9d8ee;margin:0 0 18px">Note: <b>this site does not open-source technology for watching TV, watching video, or turning boxes into download machines.</b> Many people today make a living by upgrading TV boxes into video boxes and download boxes — <b>technology should not destroy that ecosystem</b>. We hope everyone can <b>keep their livelihood and live in peace</b>, so all video-watching and download-box technology has been taken down. <b>Thank you for your understanding.</b></p>
   <div class="cards four">
     <article class="card">
     <span class="badge">Ready</span><div class="ic">🖨️</div>
@@ -62,13 +65,14 @@
     <details><summary>SHA-256 checksum</summary><code>225785bda1514d524024b199b4639ad7ad4511458ecb24327c80e9c5cda208b6</code></details>
     </article>
 
-    <article class="card">
-    <span class="badge">Ready</span><div class="ic">⬇️</div>
+    <article class="card off">
+    <span class="badge offline">Retired</span><div class="ic">⬇️</div>
     <h3>China Mobile M301H → Download Box + NAS</h3>
     <img src="../dl/preview-m301h.png" alt="M301H downloader + NAS panel" style="width:100%;border-radius:10px;border:1px solid #22314b;display:block;margin:4px 0 10px">
     <p>For the <b>China Mobile M301H</b> (<b>Skyworth CW / model M301H_CW0_AH / HiSilicon Hi3798MV300</b>): aria2 (magnet/BT/direct) + Samba share + web panel with QR. <b>Auto storage switching</b> — plug in a drive and downloads go there, otherwise internal storage (vfat/exFAT/NTFS).</p>
     <ul class="tags"><li>Download</li><li>NAS</li><li>M301H</li><li>Auto storage</li></ul>
-    <div class="dl"><a class="btn" href="../dl/openhwlab-m301h-nas-download.zip" download>Download (.zip · 122K)</a></div>
+    <div class="dl"><span class="btn offline">⛔ Retired · download unavailable</span></div>
+    <p class="offline-note">⛔ This feature has been retired — downloads and support are no longer provided (we do not open-source TV-watching, video-streaming or download-box technology).</p>
     <details><summary>SHA-256 checksum</summary><code>43643a0e06c6c6255051f538f086afca5afc424af7edd3217880746031a2a3ff</code></details>
     </article>
 
@@ -119,12 +123,13 @@
     <details><summary>SHA-256 checksum</summary><code>fa2cb83e41675505bb188516f6fcd5a25dd4346b5407679ff65ab98a7907438e</code></details>
     </article>
 
-    <article class="card">
-    <span class="badge">New</span><div class="ic">🎬</div>
+    <article class="card off">
+    <span class="badge offline">Retired</span><div class="ic">🎬</div>
     <h3>TV Box → Video &amp; Office Mini PC</h3>
     <p>Built for binge-watching + work: watch lots of video (stream in the browser, install major video apps, cast, live TV) and write documents with the built-in WPS Office (Word / Excel / PPT).</p>
     <ul class="tags"><li>Video</li><li>WPS Office</li><li>Desktop</li><li>File transfer</li></ul>
-    <div class="dl"><a class="btn" href="../dl/openhwlab-video-desktop.zip" download>Download generic kit (online · 588K)</a></div>
+    <div class="dl"><span class="btn offline">⛔ Retired · download unavailable</span></div>
+    <p class="offline-note">⛔ This feature has been retired — downloads and support are no longer provided (we do not open-source TV-watching, video-streaming or download-box technology).</p>
     <details><summary>SHA-256 checksum</summary><code>7cd70c93be48ca3d77121af9bd81eb6fad3e59688b85e195c3b669525b717a7b</code></details>
     </article>
 
@@ -146,12 +151,13 @@
     <details><summary>SHA-256 checksum</summary><code>a2228cd2fe8a5780b1b77848b01ddc19dcf9c1d1a7ee1151173187f8ef5842ff</code></details>
     </article>
 
-    <article class="card">
-    <span class="badge">Ready</span><div class="ic">⬇️</div>
+    <article class="card off">
+    <span class="badge offline">Retired</span><div class="ic">⬇️</div>
     <h3>TV Box → Download Box + NAS</h3>
     <p>Idle box + a USB drive = download box + home NAS: aria2 (magnet/BT/direct), a Samba share, scan-to-add tasks, and it boots straight into the panel.</p>
     <ul class="tags"><li>Download</li><li>NAS</li><li>Offline</li><li>QR</li></ul>
-    <div class="dl"><a class="btn" href="../dl/openhwlab-nas-download.zip" download>Download generic kit (online · 348K)</a></div>
+    <div class="dl"><span class="btn offline">⛔ Retired · download unavailable</span></div>
+    <p class="offline-note">⛔ This feature has been retired — downloads and support are no longer provided (we do not open-source TV-watching, video-streaming or download-box technology).</p>
     <details><summary>SHA-256 checksum</summary><code>d49080887612ecd9b1a1d4e21799349c9213b5b22ea4315de7ac6b0a61f2cb4b</code></details>
     </article>
 
@@ -169,6 +175,7 @@
 
 <section class="wrap prose" id="compare">
   <div class="sec-head"><h2>How it compares<span class="n">Our approach vs other systems</span></h2></div>
+  <p class="offline-banner">⛔ Note: the capability discussed here (download box / NAS) <b>has been retired</b> — no downloads or support are provided. The comparison below is kept only as an archived technical note.</p>
 <div class="callout">
     <b>Quick map</b>: the market roughly splits into three —
     ① <b>Brand NAS devices</b> (Synology DSM / QNAP QTS / lightweight "private cloud" boxes);
@@ -196,7 +203,6 @@
   <h3>What we can build (roles)</h3>
   <ul>
     <li><b>Print server</b>: old USB printer → network printing (IPP + AirPrint + QR print + auto driver).</li>
-    <li><b>Downloader + NAS</b>: aria2 downloads + Samba share + DLNA (drive-first auto storage).</li>
     <li><b>Surveillance recorder</b>: USB camera live + loop recording + remote + motion alerts.</li>
     <li><b>Game console / mini PC / ad-block DNS / KTV</b> and more.</li>
   </ul>
